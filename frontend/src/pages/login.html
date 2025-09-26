@@ -24,64 +24,129 @@
         <div class="flex justify-center md:flex-row w-full h-full overflow-hidden " style="box-shadow: 0 0 30px rgb(0 0 0 / 0.15)">
             <!-- Left side -->
             <div class="h-full flex-1 bg-gradient-to-b from-[#7db7ff] to-[#3f6fff] flex items-center justify-center">
-                <div class="relative mx-auto mt-6 w-64 h-80 md:w-80 md:h-[400px]">
-                    <img src="../assets/img/Enyok.jpg" 
+                <div class="relative mx-auto mt-6 w-64 h-80 md:w-80 md:h-[490px]">
+                    <img src="../assets/img/login.png" 
                         alt="Orang Keren" 
                         class="w-full h-full object-cover rounded-3xl" />
                 </div>
 
             </div>
             <!-- Right side -->
-            <div class="flex-1 bg-[#e9f0ff] rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none flex flex-col flex items-center justify-center">
-                <div class="max-w-[420px] w-full mx-auto bg-white rounded-2xl shadow-lg pt-6 pb-8 px-10" style="box-shadow: 0 10px 20px rgb(0 0   0 / 0.05)">
-                    <div class="flex items-center justify-between space-x-6 mb-6 border border-transparent rounded-t-2xl bg-[#f9f9f9] px-6 py-3" style="box-shadow: 0 2px 8px rgb(0 0 0 / 0.05)">
-                        <button aria-current="page" class="font-semibold text-gray-700 border-b-2 border-[#3f6fff] pb-1">
-                            Sign Up
-                        </button>
-                        <button class="text-gray-400 cursor-default select-none">
-                            Sign In
-                        </button>
-                    </div>
-                    <form class="space-y-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-[#000] mb-1" for="fullname">
-                                Full Name
-                            </label>
-                            <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none     focus:border-[#3f6fff] pb-1" id="fullname" placeholder="Enyok" type="text" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-[#000] mb-1" for="email">
-                                Email
-                            </label>
-                            <input class="w-full border-b border-gray-300 text-xs text-gray-300 placeholder-gray-300 focus:outline-none     focus:border-[#3f6fff] pb-1" id="email" placeholder="Enyok@email.com" type="email" />
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-[#000] mb-1" for="password">
-                                Password
-                            </label>
-                            <input class="w-full border-b border-gray-300 text-xs text-gray-400 placeholder-gray-300 focus:outline-none     focus:border-[#3f6fff] pb-1" id="password" placeholder="********" type="password" />
-                        </div>
-                        <button class="w-full bg-[#3f6fff] text-white text-sm font-semibold rounded-md py-2 mt-4" type="submit">
-                            Sign Up
-                        </button>
-                    </form>
-                    <p class="text-xs text-pink-500 text-center mt-4 cursor-pointer select-none">
-                        Belum punya akun ?
-                    </p>
-                </div>
-                <div class="absolute bottom-0 right-0 w-48 h-48 pointer-events-none select-none" style="opacity: 0.15">
-                    <svg class="w-full h-full" fill="none" height="192" viewbox="0 0 192 192" width="192" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern height="12" id="dots" patternunits="userSpaceOnUse" width="12" x="0" y="0">
-                                <circle cx="1" cy="1" fill="#3f6fff" r="1">
-                                </circle>
-                            </pattern>
-                        </defs>
-                        <rect fill="url(#dots)" height="192" rx="24" width="192">
-                        </rect>
-                    </svg>
-                </div>
-            </div>
+            <div class="flex-1 bg-[#e9f0ff] rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none flex flex-col items-center justify-center relative">
+  <div class="max-w-[420px] w-full mx-auto bg-white rounded-2xl shadow-lg pt-6 pb-8 px-10 transition-all duration-500 ease-in-out"
+       style="box-shadow: 0 10px 20px rgb(0 0 0 / 0.05)">
+
+    <!-- Toggle Tabs -->
+<div id="authTabs" class="flex items-center justify-between space-x-6 mb-6 rounded-t-2xl bg-[#f9f9f9] px-6 py-3 shadow-sm">
+  <button id="btnSignUp"
+          class="relative tab-btn font-semibold text-gray-700 border-b-2 border-[#3f6fff] pb-1 px-4 py-2 rounded-md transition-all duration-300 overflow-hidden hover:bg-black/20 hover:text-[#000]">
+    <span class="relative z-10">Sign Up</span>
+    <!-- Bulatan animasi -->
+    <span class="absolute inset-0 rounded-md bg-blue-100 opacity-0 scale-75 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100"></span>
+  </button>
+  <button id="btnSignIn"
+          class="relative tab-btn text-gray-400 pb-1 px-4 py-2 rounded-md transition-all duration-300 overflow-hidden hover:bg-black/20 hover:text-[#000]">
+    <span class="relative z-10">Sign In</span>
+    <span class="absolute inset-0 rounded-md bg-blue-100 opacity-0 scale-75 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100"></span>
+  </button>
+</div>
+
+
+    <!-- Form Wrapper -->
+    <div id="formWrapper" class="overflow-hidden transition-all duration-500 ease-in-out">
+      <form id="authForm" class="space-y-6" action="#" method="POST">
+        <!-- Fullname (hidden di Sign In mode) -->
+        <div id="fullnameGroup">
+          <label for="fullname" class="block text-sm font-semibold text-[#000] mb-1">Full Name</label>
+          <input id="fullname" name="fullname" type="text" placeholder="Enyok"
+                 class="w-full border-b border-gray-300 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:border-[#3f6fff] pb-1" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-semibold text-[#000] mb-1">Email</label>
+          <input id="email" name="email" type="email" placeholder="enyok@email.com"
+                 class="w-full border-b border-gray-300 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:border-[#3f6fff] pb-1" />
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-semibold text-[#000] mb-1">Password</label>
+          <input id="password" name="password" type="password" placeholder="********"
+                 class="w-full border-b border-gray-300 text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:border-[#3f6fff] pb-1" />
+        </div>
+        <button id="submitBtn" type="submit"
+                class="w-full bg-[#3f6fff] text-white text-sm font-semibold rounded-md py-2 mt-4 hover:bg-blue-700 transition">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <p id="toggleText" class="text-xs text-pink-500 text-center mt-4 cursor-pointer select-none hover:underline">
+      Sudah punya akun?
+    </p>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const btnSignUp = document.getElementById("btnSignUp");
+  const btnSignIn = document.getElementById("btnSignIn");
+  const fullnameGroup = document.getElementById("fullnameGroup");
+  const submitBtn = document.getElementById("submitBtn");
+  const toggleText = document.getElementById("toggleText");
+  const formWrapper = document.getElementById("formWrapper");
+
+  let mode = "signup";
+
+  function switchMode(newMode) {
+    if (mode === newMode) return;
+    mode = newMode;
+
+    // hitung tinggi sebelum berubah
+    const startHeight = formWrapper.scrollHeight;
+
+    if (mode === "signup") {
+      fullnameGroup.style.display = "block";
+      submitBtn.textContent = "Sign Up";
+      btnSignUp.classList.add("text-gray-700", "border-b-2", "border-[#3f6fff]");
+      btnSignUp.classList.remove("text-gray-400");
+      btnSignIn.classList.add("text-gray-400");
+      btnSignIn.classList.remove("text-gray-700", "border-b-2", "border-[#3f6fff]");
+      toggleText.textContent = "Sudah punya akun?";
+    } else {
+      fullnameGroup.style.display = "none";
+      submitBtn.textContent = "Sign In";
+      btnSignIn.classList.add("text-gray-700", "border-b-2", "border-[#3f6fff]");
+      btnSignIn.classList.remove("text-gray-400");
+      btnSignUp.classList.add("text-gray-400");
+      btnSignUp.classList.remove("text-gray-700", "border-b-2", "border-[#3f6fff]");
+      toggleText.textContent = "Belum punya akun?";
+    }
+
+    // hitung tinggi sesudah berubah
+    requestAnimationFrame(() => {
+      const endHeight = formWrapper.scrollHeight;
+
+      // animasikan tinggi
+      formWrapper.style.height = startHeight + "px";
+      requestAnimationFrame(() => {
+        formWrapper.style.height = endHeight + "px";
+      });
+
+      // reset ke auto setelah animasi selesai
+      setTimeout(() => {
+        formWrapper.style.height = "auto";
+      }, 500);
+    });
+  }
+
+  btnSignUp.addEventListener("click", () => switchMode("signup"));
+  btnSignIn.addEventListener("click", () => switchMode("signin"));
+  toggleText.addEventListener("click", () => {
+    switchMode(mode === "signup" ? "signin" : "signup");
+  });
+
+  // default state
+  switchMode("signup");
+</script>
+
         </div>
     </body>
 
