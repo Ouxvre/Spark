@@ -3,7 +3,7 @@ include "../../config/konfig.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $identifier = $_POST['identifier']; // email / phone
+    $identifier = $_POST['identifier'];
     $password   = $_POST['password'];
 
     $result = $conn->query("SELECT * FROM users WHERE email='$identifier' OR phone='$identifier'");

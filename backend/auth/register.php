@@ -3,10 +3,9 @@ include "../../config/konfig.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name       = $_POST['name'];
-    $identifier = $_POST['identifier']; // bisa email / phone
+    $identifier = $_POST['identifier'];
     $password   = $_POST['password'];
 
-    // deteksi input: email atau phone
     if (filter_var($identifier, FILTER_VALIDATE_EMAIL)) {
         $email = $identifier;
         $phone = null;
@@ -15,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone = $identifier;
     }
 
-    // cek apakah sudah dipakai
     $check = $conn->query("SELECT * FROM users WHERE email='$email' OR phone='$phone'");
     if ($check->num_rows > 0) {
         echo "Email/HP sudah terdaftar!";
