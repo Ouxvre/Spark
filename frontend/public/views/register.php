@@ -77,7 +77,7 @@
         Spark<span class="text-blue-500">.</span>
       </h1>
       <a
-        href="../views/login.html"
+        href="../views/login.php"
         class="bg-blue-400 text-white px-8 py-3 text-lg font-medium rounded-full hover:bg-blue-500 transition">
         Login
       </a>

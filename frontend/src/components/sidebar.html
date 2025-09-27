@@ -1,0 +1,143 @@
+<?php
+    session_start();
+    include ('../config/koneksi.php');
+
+    // Ambil jumlah total tugas
+    $total_tasks = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tasks"));
+
+    // Tugas selesai
+    $total_done = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tasks WHERE status = 'done'"));
+
+    // Tugas belum selesai
+    $total_pending = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tasks WHERE status = 'pending'"));
+
+    // Total users
+    $total_users = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM users"));
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/190f733d37.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <nav class="sidebar close">
+        <header>
+            <h1 class="text-4xl font-bold text-black">
+                Spark<span class="text-blue-500">.</span>
+            </h1>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="home.php" class="active">
+                            <i class="fa-regular fa-house icons"></i> 
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="todo.php">
+                            <i class="fa-solid fa-robot icons"></i>
+                            <span class="text nav-text">Interview</span>
+                        </a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank">
+                            <i class="fa-regular fa-file icons"></i>
+                            <span class="text nav-text">Script Builder</span>
+                        </a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank">
+                            <i class="fa-solid fa-book-open icons"></i>
+                            <span class="text nav-text">Vocabulary Trainer</span>
+                        </a>
+                    </li>
+                    <li class="nav-links">
+                        <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank">
+                            <i class="fa-solid fa-sliders icons"></i>
+                            <span class="text nav-text">Setting</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="bottom-content">
+                <div class="image-text">
+                <span class="image">
+                    <img src="../assets/img/profil-keren.jpg" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">
+                        <?php echo $_SESSION['username']; ?>
+                    </span>
+                    <span class="profession">
+                        <?php echo $_SESSION['role']; ?>
+                    </span>
+                </div>
+            </div>
+                <div class="">
+                    <li class="nav-links">
+                    <a href="../php/logout.php">
+                        <i class='bx bx-log-out icons'></i>
+                        <span class="text nav-text">Log Out</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <!-- <div class="moon-sun">
+                        <i class='bx bx-moon icons moon'></i>
+                        <i class='bx bx-sun icons sun'></i>
+                    </div> -->
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+                </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <section class="main">
+        <h1>Dashboard</h1>
+        <hr class="line">
+        <div class="welcome-box">
+            <h2>Selamat datang!</h2>
+            <p>Ini adalah dashboard utama untuk mengelola tugas-tugas harian kamu.<br>
+            Kamu login sebagai <strong><?php echo $_SESSION['username'] ?? 'Guest'; ?></strong> [<?php echo $_SESSION['role'] ?? 'unknown'; ?>].</p>
+        </div>
+
+        <div class="cards">
+            <a href="todo.php">
+            <div class="card">
+                <div class="card-content">
+                        <h3>Banyaknya Tugas</h3>
+                        <p><?= $total_tasks ?></p>
+                    </div>
+                    <i class='bx bx-task'></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script  src="../script/sidebar.js"></script>
+</body>
+</html>
