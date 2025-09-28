@@ -2,142 +2,173 @@
     session_start();
     include ('../config/koneksi.php');
 
-    // Ambil jumlah total tugas
     $total_tasks = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tasks"));
-
-    // Tugas selesai
     $total_done = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tasks WHERE status = 'done'"));
-
-    // Tugas belum selesai
     $total_pending = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM tasks WHERE status = 'pending'"));
-
-    // Total users
     $total_users = mysqli_num_rows(mysqli_query($conn, "SELECT id FROM users"));
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/190f733d37.js" crossorigin="anonymous"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/190f733d37.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Tailwind -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-</head>
-<link rel="stylesheet" href="style.css">
-<body>
-    <nav class="sidebar close">
-        <header>
-            <h1 class="text-4xl font-bold text-black">
-                Spark<span class="text-blue-500">.</span>
-            </h1>
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-screen bg-[#E4E9F7] transition-all">
+    <!-- Sidebar -->
+    <nav
+      class="sidebar fixed top-0 left-0 h-full w-[250px] bg-white p-4 shadow"
+    >
+      <!-- Header Logo -->
+      <header class="mb-6 w-full flex items-center justify-center">
+        <div class="flex justify-between items-center">
+      <h1 class="text-4xl font-bold text-black">
+        <a href="home.php">
+            Spark<span class="text-blue-500">.</span>
+        </a>
+      </h1>
+    </div>
+      </header>
 
-        <div class="menu-bar">
-            <div class="menu">
-                <ul class="menu-links">
-                    <li class="nav-links">
-                        <a href="home.php" class="active">
-                            <i class="fa-regular fa-house icons"></i> 
-                            <span class="text nav-text">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-links">
-                        <a href="todo.php">
-                            <i class="fa-solid fa-robot icons"></i>
-                            <span class="text nav-text">Interview</span>
-                        </a>
-                    </li>
-                    <li class="nav-links">
-                        <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank">
-                            <i class="fa-regular fa-file icons"></i>
-                            <span class="text nav-text">Script Builder</span>
-                        </a>
-                    </li>
-                    <li class="nav-links">
-                        <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank">
-                            <i class="fa-solid fa-book-open icons"></i>
-                            <span class="text nav-text">Vocabulary Trainer</span>
-                        </a>
-                    </li>
-                    <li class="nav-links">
-                        <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank">
-                            <i class="fa-solid fa-sliders icons"></i>
-                            <span class="text nav-text">Setting</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        
-            <div class="bottom-content">
-                <div class="image-text">
-                <span class="image">
-                    <img src="../assets/img/profil-keren.jpg" alt="logo">
-                </span>
+      <!-- Menu -->
+      <div class="menu-bar flex flex-col h-[90%] justify-between border-t border-gray-300">
+        <ul class="menu-links space-y-2 pt-3">
+          <li class="nav-links">
+            <a
+              href="home.php"
+              class="flex items-center px-3 py-2 rounded-md bg-[#dadadf] transition"
+            >
+              <i class="fa-regular fa-house icons mr-3 text-lg text-black"></i>
+              <span class="text nav-text text-gray-700">Home</span>
+            </a>
+          </li>
+          <li class="nav-links">
+            <a
+              href="todo.php"
+              class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition"
+            >
+              <i class="fa-solid fa-robot icons mr-3 text-lg text-black"></i>
+              <span class="text nav-text text-gray-700">Interview</span>
+            </a>
+          </li>
+          <li class="nav-links">
+            <a
+              href="#"
+              target="_blank"
+              class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition"
+            >
+              <i class="fa-regular fa-file icons mr-3 text-lg text-black"></i>
+              <span class="text nav-text text-gray-700">Script Builder</span>
+            </a>
+          </li>
+          <li class="nav-links">
+            <a
+              href="#"
+              target="_blank"
+              class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition"
+            >
+              <i
+                class="fa-solid fa-book-open icons mr-3 text-lg text-black"
+              ></i>
+              <span class="text nav-text text-gray-700"
+                >Vocabulary Trainer</span
+              >
+            </a>
+          </li>
+          <li class="nav-links">
+            <a
+              href="#"
+              target="_blank"
+              class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition"
+            >
+              <i class="fa-solid fa-sliders icons mr-3 text-lg text-black"></i>
+              <span class="text nav-text text-gray-700">Setting</span>
+            </a>
+          </li>
+        </ul>
 
-                <div class="text header-text">
-                    <span class="name">
-                        <?php echo $_SESSION['username']; ?>
-                    </span>
-                    <span class="profession">
-                        <?php echo $_SESSION['role']; ?>
-                    </span>
-                </div>
+        <!-- Bottom: Profile & Logout -->
+        <div class="bottom-content pt-4 border-t border-gray-300">
+          <div class="image-text flex items-center h-[65px] gap-3 px-2.5 py-3 mb-4  border border-gray-300 hover:border-gray-600 rounded-2xl hover:bg-gray-400">
+            <a href="setting.php" class="flex items-center gap-5 h-full w-full">
+            <span
+              class="image w-[40px] h-[40px] flex items-center justify-center"
+            >
+              <img
+                src="../assets/img/profil-keren.jpg"
+                alt="logo"
+                class="rounded-lg w-10 h-10"
+              />
+            </span>
+            <div class="text header-text flex flex-col leading-tight gap-[3px] ">
+              <span class="name font-semibold text-[17px] text-black">
+                <?php echo $_SESSION['username'] ?? 'Guest'; ?>
+                Farel
+              </span>
+              <span class="profession text-sm text-gray-500">
+                <?php echo $_SESSION['role'] ?? 'unknown'; ?>
+                Budak
+              </span>
             </div>
-                <div class="">
-                    <li class="nav-links">
-                    <a href="../php/logout.php">
-                        <i class='bx bx-log-out icons'></i>
-                        <span class="text nav-text">Log Out</span>
-                    </a>
-                </li>
-                <li class="mode">
-                    <!-- <div class="moon-sun">
-                        <i class='bx bx-moon icons moon'></i>
-                        <i class='bx bx-sun icons sun'></i>
-                    </div> -->
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
-                    </div>
-                    <span class="mode-text text">Dark Mode</span>
-                </li>
-                </div>
-            </div>
+        </a>
+          </div>
+
+          <a
+            href="../php/logout.php"
+            class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition"
+          >
+            <i class="bx bx-log-out icons mr-3 text-xl text-black"></i>
+            <span class="text nav-text text-gray-700">Log Out</span>
+          </a>
         </div>
+      </div>
     </nav>
 
-    <!-- Main Dashboard Content -->
-    <section class="main">
-        <h1>Dashboard</h1>
-        <hr class="line">
-        <div class="welcome-box">
-            <h2>Selamat datang!</h2>
-            <p>Ini adalah dashboard utama untuk mengelola tugas-tugas harian kamu.<br>
-            Kamu login sebagai <strong><?php echo $_SESSION['username'] ?? 'Guest'; ?></strong> [<?php echo $_SESSION['role'] ?? 'unknown'; ?>].</p>
-        </div>
+    <!-- Main Content -->
+    <!-- <section class="main ml-[250px] transition-all duration-500 p-6 h-screen">
+      <h1 class="text-gray-700 text-2xl font-bold mb-2">Dashboard</h1>
+      <hr class="line border-t-2 border-gray-300 mb-4" />
 
-        <div class="cards">
-            <a href="todo.php">
-            <div class="card">
-                <div class="card-content">
-                        <h3>Banyaknya Tugas</h3>
-                        <p><?= $total_tasks ?></p>
-                    </div>
-                    <i class='bx bx-task'></i>
-                </div>
-            </a>
-        </div>
-    </section>
+      <div class="welcome-box bg-[#F6F5FF] rounded-xl p-6 shadow mb-6">
+        <h2 class="text-xl font-semibold text-gray-700 mb-2">
+          Selamat datang!
+        </h2>
+        <p class="text-gray-600">
+          Ini adalah dashboard utama untuk mengelola tugas-tugas harian kamu.<br />
+          Kamu login sebagai
+          <strong><?php echo $_SESSION['username'] ?? 'Guest'; ?></strong>
+          [<?php echo $_SESSION['role'] ?? 'unknown'; ?>].
+        </p>
+      </div>
 
-    <script  src="../script/sidebar.js"></script>
-</body>
+      <div class="cards grid grid-cols-2 gap-6">
+        <a href="todo.php" class="block">
+          <div
+            class="card bg-[#F6F5FF] rounded-xl p-6 shadow flex justify-between items-center h-[150px] hover:-translate-y-1 hover:shadow-lg transition"
+          >
+            <div class="card-content">
+              <h3 class="text-gray-700 text-lg font-medium">Banyaknya Tugas</h3>
+              <p class="text-2xl font-bold text-gray-700">
+                <?= $total_tasks ?>
+              </p>
+            </div>
+            <i class="bx bx-task text-4xl text-gray-600"></i>
+          </div>
+        </a>
+      </div>
+    </section> -->
+  </body>
 </html>
