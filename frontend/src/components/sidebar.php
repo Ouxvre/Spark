@@ -49,7 +49,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </li>
 
         <li class="nav-links">
-          <a href="interview.php"
+          <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o"
+          target="_blank"
             class="flex items-center px-3 py-2 rounded-md transition
       <?php echo ($current_page == 'interview.php') ? 'bg-blue-500 text-white' : 'hover:bg-[#dadadf] text-gray-700'; ?>">
             <i class="fa-solid fa-robot icons mr-3 text-lg"></i>
