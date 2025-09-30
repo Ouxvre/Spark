@@ -158,7 +158,7 @@
 
     <!-- Forgot Password -->
     <a
-      href="forgot.html"
+      href="forgot.php"
       class="text-base text-gray-500 font-medium mt-6 text-center hover:underline">Forgot Password?</a>
 
     <!-- Footer -->

@@ -101,11 +101,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <div class="text header-text flex flex-col leading-tight gap-[3px] ">
               <span class="name font-semibold text-[17px] text-black">
                 <?php echo $_SESSION['username'] ?? 'Guest'; ?>
-                Farel
               </span>
               <span class="profession text-sm text-gray-500">
                 <?php echo $_SESSION['role'] ?? 'unknown'; ?>
-                Budak
               </span>
             </div>
           </a>
