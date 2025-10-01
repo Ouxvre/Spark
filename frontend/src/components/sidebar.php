@@ -1,123 +1,114 @@
-<?php
-$current_page = basename($_SERVER['PHP_SELF']);
+<?php 
+  $current_page = basename($_SERVER['PHP_SELF']); 
 ?>
 
 
-<html lang="en">
+<html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
 
-  <link
-    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-    rel="stylesheet" />
-  <script
-    src="https://kit.fontawesome.com/190f733d37.js"
-    crossorigin="anonymous"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins';
+    }
+    </style>
 </head>
 
 <body class="h-screen bg-[#E4E9F7] transition-all">
-  <!-- Sidebar -->
-  <nav
-    class="sidebar fixed top-0 left-0 h-full w-[250px] bg-white p-4 shadow">
-    <!-- Header Logo -->
-    <header class="mb-6 w-full flex items-center justify-center">
-      <div class="flex justify-between items-center">
-        <h1 class="text-4xl font-bold text-black">
-          <a href="home.php">
-            Spark<span class="text-blue-500">.</span>
-          </a>
-        </h1>
-      </div>
-    </header>
 
-    <!-- Menu -->
-    <div class="menu-bar flex flex-col h-[90%] justify-between border-t border-gray-300">
-      <ul class="menu-links space-y-2 pt-3">
-        <li class="nav-links">
-          <a href="dashboard.php"
-            class="flex items-center px-3 py-2 rounded-md transition
-      <?php echo ($current_page == 'dashboard.php') ? 'bg-blue-500 text-white' : 'hover:bg-[#dadadf] text-gray-700'; ?>">
-            <i class="fa-regular fa-house icons mr-3 text-lg"></i>
-            <span class="text nav-text">Home</span>
-          </a>
-        </li>
-
-        <li class="nav-links">
-          <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o"
-          target="_blank"
-            class="flex items-center px-3 py-2 rounded-md transition
-      <?php echo ($current_page == 'interview.php') ? 'bg-blue-500 text-white' : 'hover:bg-[#dadadf] text-gray-700'; ?>">
-            <i class="fa-solid fa-robot icons mr-3 text-lg"></i>
-            <span class="text nav-text">Interview</span>
-          </a>
-        </li>
-        <li class="nav-links">
-          <a
-            href="scriptbuilder.php"
-            class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition
-      <?php echo ($current_page == 'scriptbuilder.php') ? 'bg-blue-500 text-white' : 'hover:bg-[#dadadf] text-gray-700'; ?>">
-            <i class="fa-regular fa-file icons mr-3 text-lg"></i>
-            <span class="text nav-text">Script Builder</span>
-          </a>
-        </li>
-        <li class="nav-links">
-          <a
-            href="vocabularytrainer.php"
-            class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition 
-      <?php echo ($current_page == 'vocabularytrainer.php') ? 'bg-blue-500 text-white' : 'hover:bg-[#dadadf] text-gray-700'; ?>">
-            <i
-              class="fa-solid fa-book-open icons mr-3 text-lg"></i>
-            <span class="text nav-text">Vocabulary Trainer</span>
-          </a>
-        </li>
-        <li class="nav-links">
-          <a
-            href="setting.php"
-            class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition
-      <?php echo ($current_page == 'setting.php') ? 'bg-blue-500 text-white' : 'hover:bg-[#dadadf] text-gray-700'; ?>">
-            <i class="fa-solid fa-sliders icons mr-3 text-lg"></i>
-            <span class="text nav-text">Setting</span>
-          </a>
-        </li>
-      </ul>
-
-      <!-- Bottom: Profile & Logout -->
-      <div class="bottom-content pt-4 border-t border-gray-300">
-        <div class="image-text flex items-center h-[65px] gap-3 px-2.5 py-3 mb-4  border border-gray-300 hover:border-gray-600 rounded-2xl hover:bg-gray-400">
-          <a href="setting.php" class="flex items-center gap-5 h-full w-full">
-            <span
-              class="image w-[40px] h-[40px] flex items-center justify-center">
-              <img
-                src="../assets/uploads/avatars/default.jpeg"
-                alt="logo"
-                class="rounded-lg w-10 h-10" />
-            </span>
-            <div class="text header-text flex flex-col leading-tight gap-[3px] ">
-              <span class="name font-semibold text-[17px] text-black">
-                <?php echo $_SESSION['username'] ?? 'Guest'; ?>
-              </span>
-              <span class="profession text-sm text-gray-500">
-                <?php echo $_SESSION['role'] ?? 'unknown'; ?>
-              </span>
-            </div>
-          </a>
+    <!-- Sidebar -->
+    <aside class="w-[220px] h-screen bg-white border-r border-gray-200 flex flex-col">
+        <div class="p-6 border-b border-gray-200">
+            <h1 class="flex items-center text-[50px] font-bold justify-center">Spark<span class="text-blue-500">.</span>
+            </h1>
         </div>
 
-        <a
-          href="../../../backend/auth/logout.php"
-          class="flex items-center px-3 py-2 rounded-md hover:bg-[#dadadf] transition">
-          <i class="bx bx-log-out icons mr-3 text-xl text-black"></i>
-          <span class="text nav-text text-gray-700">Log Out</span>
-        </a>
-      </div>
-    </div>
-  </nav>
+        <!-- Navigation -->
+        <nav class="flex-1 p-4 pt-10">
+            <a href="../../public/views/dashboard.php" class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
+   <?php echo $current_page == 'dashboard.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+
+                <span class="text-[15px]">Home</span>
+            </a>
+            <a href="../../public/views/interview.php" class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
+   <?php echo $current_page == 'interview.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                </svg>
+
+                <span class="text-[15px]">Interview</span>
+            </a>
+            <a href="../../public/views/scriptbuilder.php"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
+   <?php echo $current_page == 'scriptbuilder.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+
+                <span class="text-[15px]">Script Builder</span>
+            </a>
+            <a href="../../public/views/vocabularytrainer.php"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
+   <?php echo $current_page == 'vocabularytrainer.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+
+                <span class="text-[15px]">Vocabulary Trainer</span>
+            </a>
+            <a href="../../public/views/setting.php" class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
+   <?php echo $current_page == 'setting.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                </svg>
+
+
+                <span class="text-[15px]">Setting</span>
+            </a>
+        </nav>
+
+        <!-- User Profile -->
+        <div class="flex items-center justify-between w-50 p-6 border gap-2">
+            <div class="flex items-center space-x-3">
+                <img src="../assets/img/Enyok.jpg" alt="Foto Profil"
+                    class="w-9 h-9 rounded-full bg-gray-200 object-cover">
+                <div>
+                    <p class="text-[15px] font-semibold text-gray-900">Dummy</p>
+                    <p class="text-[10px] text-gray-600">dummy@gmail.com</p>
+                </div>
+            </div>
+
+            <a href="../../backend/auth/logout.php" class="text-gray-700 hover:text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                    </svg>
+            </a>
+        </div>
+    </aside>
 </body>
 
 </html>

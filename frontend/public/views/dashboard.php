@@ -1,3 +1,8 @@
+<?php
+include(__DIR__ . '/../../../backend/include/check_login.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +11,8 @@
     <title>Document</title>
 </head>
 <body>
+
     <?php include '../../src/components/sidebar.php'?>
+
 </body>
 </html>

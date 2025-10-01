@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$_SESSION = array();
+$_SESSION = [];
 
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
@@ -18,6 +18,7 @@ if (ini_get("session.use_cookies")) {
 
 session_destroy();
 
-header("Location: ../../frontend/public/index.html");
+header("Location: ../../frontend/public/views/login.php");
 exit;
+
 ?>

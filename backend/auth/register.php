@@ -2,7 +2,7 @@
 include "../../config/konfig.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name       = $_POST['name'];
+    $username       = $_POST['username'];
     $identifier = $_POST['identifier'];
     $password   = $_POST['password'];
 
@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (name, email, phone, password_hash) 
-                VALUES ('$name', " . ($email ? "'$email'" : "NULL") . ", " . ($phone ? "'$phone'" : "NULL") . ", '$hash')";
+        $sql = "INSERT INTO users (username, email, phone, password_hash) 
+                VALUES ('$username', " . ($email ? "'$email'" : "NULL") . ", " . ($phone ? "'$phone'" : "NULL") . ", '$hash')";
 
         if ($conn->query($sql) === TRUE) {
             header("Location: ../../frontend/public/views/login.php?registered=success");
