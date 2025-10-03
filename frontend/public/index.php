@@ -38,14 +38,14 @@
             <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 <!-- Logo -->
-                <div class="text-4xl font-bold">
+                <div class="text-4xl font-bold z-10">
                     Spark<span class="text-[#68BBFF]">.</span>
                 </div>
 
                 <!-- Menu + Tombol -->
-                <div class="flex items-center">
+                <div class="flex items-center space-x-10">
                     <!-- Menu Desktop -->
-                    <nav class="hidden md:flex items-center space-x-8">
+                    <nav class="hidden md:flex items-center space-x-10">
                         <a href="#cara-kerja" class="hover:text-gray-300">Cara Kerja</a>
                         <a href="#premium" class="hover:text-gray-300">Premium</a>
                     </nav>
@@ -100,7 +100,8 @@
                             <div>
                                 <div class="font-semibold text-gray-800">Linda</div>
                                 <div class="text-sm text-gray-600">
-                                    Background pendidikan saya akuntasi, saya ingin...
+                                    <!-- Background pendidikan saya akuntasi, saya ingin... -->
+                                    Aku suka nonton <br> sound horeg...
                                 </div>
                             </div>
                         </div>

@@ -105,10 +105,10 @@
     <?php include '../../src/components/sidebar.php'?>
 
     <!-- Main content -->
-    <main class="flex-1 p-7 ml-[220px]">
-        <div class="glass-effect rounded-2xl shadow-2xl w-full mx-auto p-8 md:p-10">
+    <main class="flex-1 p-5 ml-[220px]">
+        <div class="glass-effect rounded-2xl shadow-2xl w-full mx-auto md:p-2">
 
-            <div class="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+            <div class="flex items-center justify-between mb-4 py-1.5 border-b border-gray-200">
                 <div>
                     <h2 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">Settings</h2>
                     <!-- <p class="text-gray-500 text-sm mt-1">Manage your account preferences</p> -->
@@ -127,7 +127,7 @@
             <div class="flex flex-col md:flex-row gap-8">
 
                 <!-- Left menu -->
-                <nav class="flex flex-col md:border-r border-gray-200 md:pr-8 min-w-[200px]">
+                <nav class="flex flex-col md:border-r border-gray-200 md:pr-8 min-w-[200px] space-y-2">
                     <button class="menu-btn active text-left px-5 py-3.5 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 font-medium flex items-center gap-3 group">
                         <div class="w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,10 +181,10 @@
 
                 <!-- Right content -->
                 <section class="flex-1">
-                    <form action="#" method="POST" class="space-y-8">
+                    <form action="#" method="POST" class="space-y-2">
                         <!-- Profile Picture -->
-                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6">
-                            <label class="block text-sm font-semibold text-gray-800 mb-4">Profile Picture</label>
+                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-3">
+                            <label class="text-sm font-semibold text-gray-800 mb-4 flex items-center justify-center z-100">Profile Picture</label>
                             <div class="flex flex-col sm:flex-row items-center gap-6">
                                 <div class="profile-avatar w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-white shadow-lg relative z-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -200,7 +200,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <p class="text-xs text-gray-500 mt-4">Recommended: Square image, at least 400x400px</p>
+                            <!-- <p class="text-xs text-gray-500 mt-4">Recommended: Square image, at least 400x400px</p> -->
                         </div>
 
                         <!-- Profile Name -->
@@ -208,7 +208,7 @@
                             <label for="profileName" class="block text-sm font-semibold text-gray-800 mb-2">Profile Name</label>
                             <div class="relative">
                                 <input id="profileName" name="profileName" type="text" placeholder="Supeno" 
-                                    class="input-field w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                                    class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
@@ -221,24 +221,24 @@
                             <div class="relative">
                                 <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">@</span>
                                 <input id="username" name="username" type="text" placeholder="Supeno12" 
-                                    class="input-field w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                                    class="input-field w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
                             </div>
-                            <p class="text-xs text-gray-500 mt-2">Your unique identifier across the platform</p>
+                            <!-- <p class="text-xs text-gray-500 mt-2">Your unique identifier across the platform</p> -->
                         </div>
 
                         <!-- About Me -->
                         <div>
                             <label for="aboutMe" class="block text-sm font-semibold text-gray-800 mb-2">About Me</label>
                             <textarea id="aboutMe" name="aboutMe" rows="5" placeholder="Tell us about yourself..." 
-                                class="input-field w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
-                            <div class="flex justify-between items-center mt-2">
-                                <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p>
-                                <span class="text-xs text-gray-400">0/500</span>
-                            </div>
+                                class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent "></textarea>
+                            <!-- <div class="flex justify-between items-center mt-2"> -->
+                                <!-- <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p> -->
+                                <!-- <span class="text-xs text-gray-400">0/500</span> -->
+                            <!-- </div> -->
                         </div>
 
                         <!-- Save Button -->
-                        <div class="flex justify-end gap-3 pt-4">
+                        <div class="flex justify-end gap-3">
                             <button type="button" 
                                 class="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition">
                                 Cancel
