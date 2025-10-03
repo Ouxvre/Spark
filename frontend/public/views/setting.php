@@ -105,8 +105,8 @@
     <?php include '../../src/components/sidebar.php'?>
 
     <!-- Main content -->
-    <main class="flex-1 p-5 ml-[220px]">
-        <div class="glass-effect rounded-2xl shadow-2xl w-full mx-auto md:p-2">
+    <main class="flex-1 p-5 ml-[220px] w-full h-dvh ">
+        <div class="glass-effect rounded-2xl shadow-2xl w-full mx-auto md:p-2 h-full overflow-hidden">
 
             <div class="flex items-center justify-between mb-4 py-1.5 border-b border-gray-200">
                 <div>
@@ -127,9 +127,9 @@
             <div class="flex flex-col md:flex-row gap-8">
 
                 <!-- Left menu -->
-                <nav class="flex flex-col md:border-r border-gray-200 md:pr-8 min-w-[200px] space-y-2">
+                <nav class="flex flex-col md:border-r border-gray-200 md:pr-8 min-w-[200px] h-screen space-y-1">
                     <button class="menu-btn active text-left px-5 py-3.5 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 font-medium flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-lg bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition">
+                        <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center group-hover:shadow-md transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
@@ -137,7 +137,7 @@
                         <span>Profile</span>
                     </button>
                     <button class="menu-btn text-left px-5 py-3.5 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-50 flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
+                        <div class="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -146,7 +146,7 @@
                         <span>Account</span>
                     </button>
                     <button class="menu-btn text-left px-5 py-3.5 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-50 flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
+                        <div class="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
@@ -154,7 +154,7 @@
                         <span>Chat</span>
                     </button>
                     <button class="menu-btn text-left px-5 py-3.5 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-50 flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
+                        <div class="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                             </svg>
@@ -162,7 +162,7 @@
                         <span>Voice & Video</span>
                     </button>
                     <button class="menu-btn text-left px-5 py-3.5 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-50 flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
+                        <div class="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                             </svg>
@@ -170,7 +170,7 @@
                         <span>Appearance</span>
                     </button>
                     <button class="menu-btn text-left px-5 py-3.5 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-50 flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
+                        <div class="w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                             </svg>
@@ -184,7 +184,7 @@
                     <form action="#" method="POST" class="space-y-2">
                         <!-- Profile Picture -->
                         <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-3">
-                            <label class="text-sm font-semibold text-gray-800 mb-4 flex items-center justify-center z-100">Profile Picture</label>
+                            <label class="block text-sm font-semibold text-gray-800 mb-4 z-100">Profile Picture</label>
                             <div class="flex flex-col sm:flex-row items-center gap-6">
                                 <div class="profile-avatar w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-white shadow-lg relative z-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -229,8 +229,8 @@
                         <!-- About Me -->
                         <div>
                             <label for="aboutMe" class="block text-sm font-semibold text-gray-800 mb-2">About Me</label>
-                            <textarea id="aboutMe" name="aboutMe" rows="5" placeholder="Tell us about yourself..." 
-                                class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent "></textarea>
+                            <textarea id="aboutMe" name="aboutMe" rows="3" placeholder="Tell us about yourself..." 
+                                class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
                             <!-- <div class="flex justify-between items-center mt-2"> -->
                                 <!-- <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p> -->
                                 <!-- <span class="text-xs text-gray-400">0/500</span> -->
