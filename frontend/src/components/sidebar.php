@@ -26,7 +26,7 @@
 <body class="h-screen bg-[#E4E9F7] transition-all">
 
     <!-- Sidebar -->
-    <aside class="w-[220px] h-screen bg-white border-r border-gray-200 flex flex-col">
+    <aside class="w-[220px] h-screen bg-white border-r border-gray-200 flex flex-col fixed z-10">
         <div class="p-6 border-b border-gray-200">
             <h1 class="flex items-center text-[50px] font-bold justify-center">Spark<span class="text-blue-500">.</span>
             </h1>
@@ -54,7 +54,8 @@
 
                 <span class="text-[15px]">Interview</span>
             </a>
-            <a href="../../public/views/scriptbuilder.php"
+            <!-- <a href="../../public/views/scriptbuilder.php" -->
+            <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank"
                 class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
    <?php echo $current_page == 'scriptbuilder.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

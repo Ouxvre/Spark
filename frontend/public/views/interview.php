@@ -14,7 +14,7 @@
          <?php include '../../src/components/sidebar.php'?>
 
         <!-- Main Content -->
-        <main class="flex-1 p-8 mt-10">
+        <main class="flex-1 p-8 ml-[220px] mt-10">
             <!-- Header -->
             <div class="mb-8 flex items-center justify-center flex-col">
                 <p class="text-sm text-gray-600 mb-2">Selamat Datang Di Spark</p>
