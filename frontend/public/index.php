@@ -54,7 +54,7 @@
                     <!-- Menu Desktop -->
                     <nav class="hidden md:flex items-center space-x-10">
                         <a href="#cara-kerja" class="hover:text-gray-300">Cara Kerja</a>
-                        <a href="#premium" class="hover:text-gray-300">Premium</a>
+                        <a href="../public/premium.php" class="hover:text-gray-300">Premium</a>
                     </nav>
 
                     <!-- Tombol -->
@@ -98,13 +98,14 @@
 
 
                 <!-- Right Content - Image -->
-                <div class="relative">
+                <div class="relative hidden lg:block">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=600&fit=crop"
                         alt="Woman with laptop"
                         class="w-full max-w-md mx-auto rounded-lg shadow-2xl transform hover:scale-105 transition duration-300">
 
                     <!-- Floating Card -->
-                    <div class="absolute bottom-8 right-0 bg-white rounded-lg shadow-xl p-4 max-w-xs transform hover:scale-105 transition duration-300">
+                    <div
+                        class="absolute bottom-8 right-0 bg-white rounded-lg shadow-xl p-4 max-w-xs transform hover:scale-105 transition duration-300">
                         <div class="flex items-start gap-3">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop"
                                 alt="Linda"
@@ -112,137 +113,166 @@
                             <div>
                                 <div class="font-semibold text-gray-800">Linda</div>
                                 <div class="text-sm text-gray-600">
-                                    <!-- Background pendidikan saya akuntasi, saya ingin... -->
                                     Aku suka nonton <br> sound horeg...
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <!-- cara kerja -->
-    <section class="max-w-6xl mx-auto px-6 py-16" id="cara-kerja">
+    <!-- CARA KERJA -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16" id="cara-kerja">
 
         <!-- Title + Arrow -->
-        <div class="flex flex-col items-center justify-center mb-12">
-            <h1 class="text-3xl font-bold tracking-wider mb-5">CARA KERJA</h1>
+        <div class="flex flex-col items-center justify-center mb-12 text-center">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide mb-4">
+                CARA KERJA
+            </h1>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                class="w-8 h-8 mt-2 animate-bounce text-gray-700">
+                class="w-6 h-6 sm:w-8 sm:h-8 mt-2 animate-bounce text-gray-700">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
             </svg>
         </div>
 
         <!-- Grid Langkah -->
-        <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
             <!-- Langkah 1 -->
-            <div>
-                <p class="uppercase tracking-widest text-gray-500 mb-2">Langkah 1</p>
-                <h2 class="text-2xl font-semibold mb-4">Isi posisi yang ingin dilamar</h2>
-                <p class="text-gray-600">
+            <div class="order-1">
+                <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
+                    Langkah 1
+                </p>
+                <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                    Isi posisi yang ingin dilamar
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
                     Ketik posisi dan nama perusahaan yang ingin dilamar, AI akan bentuk latihan interview yang sesuai
                 </p>
             </div>
 
-            <div class="bg-gray-50 rounded-xl p-8 flex justify-center">
-                <div class="bg-gray-100 rounded-xl overflow-hidden w-[575px] h-[329px]">
-                    <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+            <div class="order-2">
+                <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] aspect-video">
+                        <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
 
             <!-- Langkah 2 -->
-            <div class="bg-gray-50 rounded-xl p-8 flex justify-center">
-                <div class="bg-gray-100 rounded-xl overflow-hidden w-[575px] h-[329px]">
-                    <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+            <div class="order-4 md:order-3">
+                <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] aspect-video">
+                        <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
 
-            <div>
-                <p class="uppercase tracking-widest text-gray-500 mb-2">Langkah 2</p>
-                <h2 class="text-2xl font-semibold mb-4">Wawancara langsung pakai suara</h2>
-                <p class="text-gray-600">
+            <div class="order-3 md:order-4">
+                <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
+                    Langkah 2
+                </p>
+                <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                    Wawancara langsung pakai suara
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
                     Wawancara bareng AI kami, seperti ngobrol dengan HR beneran!
                 </p>
             </div>
 
             <!-- Langkah 3 -->
-            <div>
-                <p class="uppercase tracking-widest text-gray-500 mb-2">Langkah 3</p>
-                <h2 class="text-2xl font-semibold mb-4">Dapat masukan langsung setelah wawancara</h2>
-                <p class="text-gray-600">
+            <div class="order-5">
+                <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
+                    Langkah 3
+                </p>
+                <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                    Dapat masukan langsung setelah wawancara
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
                     Dapatkan saran dan tips untuk wawancara yang lebih baik langsung setelah wawancara selesai!
                 </p>
             </div>
 
-            <div class="bg-gray-50 rounded-xl p-8 flex justify-center">
-                <div class="bg-gray-100 rounded-xl overflow-hidden w-[575px] h-[329px]">
-                    <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+            <div class="order-6">
+                <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] aspect-video">
+                        <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section class="relative py-20 bg-[#F7F7FA]">
+
+    <section class="relative bg-[#F7F7FA]">
 
         <!-- FAQ Section -->
-        <section class="py-14 px-4 md:py-16 lg:py-20">
+        <section class="py-20 px-4">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-900">
-                    Pertanyaan yang sering Diajukan
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-900">
+                    Pertanyaan yang Sering Diajukan
                 </h2>
 
                 <!-- FAQ Items -->
                 <div class="space-y-4">
-                    <!-- FAQ Item 1 -->
-                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-300">
-                        <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200">
-                            <span class="text-sm md:text-base text-gray-700 font-medium">Apakah latihannya bisa paket semua tahapan?</span>
+
+                    <!-- FAQ Item -->
+                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all">
+                        <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-base md:text-lg text-gray-700 font-medium">
+                                Apakah latihannya bisa pakai semua bahasa?
+                            </span>
                             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div x-show="open" x-cloak x-collapse class="px-6 pb-4">
+                        <div x-show="open" x-collapse x-cloak class="px-6 pb-4">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-                                Ya, kami menyediakan paket lengkap yang mencakup semua tahapan latihan dari dasar hingga tingkat lanjut. Paket ini dirancang secara sistematis untuk memastikan Anda mendapatkan hasil maksimal.
+                                Ya, latihan kami mendukung berbagai bahasa untuk membantu Anda berlatih sesuai kebutuhan.
                             </p>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 2 -->
-                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-300">
-                        <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200">
-                            <span class="text-sm md:text-base text-gray-700 font-medium">Apakah bisa menggunakan HP untuk latihan?</span>
+                    <!-- FAQ Item -->
+                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all">
+                        <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-base md:text-lg text-gray-700 font-medium">
+                                Apakah bisa menggunakan HP untuk latihan?
+                            </span>
                             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div x-show="open" x-cloak x-collapse class="px-6 pb-4">
+                        <div x-show="open" x-collapse x-cloak class="px-6 pb-4">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-                                Tentu saja! Platform kami fully responsive dan dapat diakses melalui HP, tablet, maupun komputer. Anda bisa berlatih kapan saja dan di mana saja dengan nyaman.
+                                Tentu saja! Platform kami responsif dan dapat diakses lewat HP, tablet, maupun komputer.
                             </p>
                         </div>
                     </div>
 
-                    <!-- FAQ Item 3 -->
-                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-300">
-                        <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200">
-                            <span class="text-sm md:text-base text-gray-700 font-medium">Apakah gratis untuk latihan?</span>
+                    <!-- FAQ Item -->
+                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all">
+                        <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <span class="text-base md:text-lg text-gray-700 font-medium">
+                                Apakah gratis untuk latihan?
+                            </span>
                             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div x-show="open" x-cloak x-collapse class="px-6 pb-4">
+                        <div x-show="open" x-collapse x-cloak class="px-6 pb-4">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-                                Kami menyediakan beberapa latihan gratis untuk dicoba. Untuk akses penuh ke semua fitur dan materi latihan, tersedia paket berlangganan dengan harga yang terjangkau.
+                                Kami menyediakan beberapa latihan gratis. Untuk fitur lengkap tersedia paket berlangganan terjangkau.
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -250,52 +280,40 @@
         <!-- Call to Action -->
         <section class="py-12 px-4">
             <div class="max-w-3xl mx-auto">
-                <div class="bg-gradient-to-r from-indigo-700 to-indigo-800 rounded-2xl p-8 md:p-12 text-center shadow-xl">
+                <div class="bg-indigo-800 rounded-xl p-8 md:p-12 text-center shadow-lg">
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-6">
                         Besok ada wawancara kerja?
                     </h3>
-                    <button class="bg-teal-400 hover:bg-teal-500 text-indigo-900 font-semibold px-8 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <button class="bg-teal-400 hover:bg-teal-500 text-indigo-900 font-semibold px-8 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-0.5">
                         Yuk Latihan Sekarang!
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Powered By Section -->
+        <!-- Powered By -->
         <section class="py-12 px-4 bg-white">
             <div class="max-w-5xl mx-auto">
-                <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-16 text-gray-900">
+                <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">
                     Powered By
                 </h3>
-                <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 lg:gap-20">
+                <div class="flex flex-wrap items-center justify-center gap-12 md:gap-20">
+
                     <!-- 11ElevenLabs Grants -->
                     <div class="flex items-center opacity-80 hover:opacity-100 transition-opacity duration-200">
-                        <span class="text-xl md:text-2xl font-bold text-gray-900">11ElevenLabs</span>
-                        <span class="text-xl md:text-2xl font-normal text-gray-700">Grants</span>
+                        <img src="https://storage.googleapis.com/eleven-public-cdn/images/elevenlabs-grants-logo.png" alt="Eleven Labs logo" width="200">
                     </div>
 
                     <!-- OpenAI -->
                     <div class="flex items-center space-x-2 opacity-80 hover:opacity-100 transition-opacity duration-200">
-                        <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none">
-                            <path d="M22.2819 9.8211C23.5487 11.5168 23.5487 13.8821 22.2819 15.5779C21.0151 17.2736 18.8321 17.9463 16.7417 17.2656L16.7419 17.2657C16.6844 17.2476 16.627 17.2291 16.5697 17.2104C15.6271 16.9028 14.8034 16.3141 14.2044 15.5296C13.6054 14.7451 13.2568 13.7987 13.2015 12.8174C13.1462 11.8361 13.3865 10.8606 13.8936 10.0139C14.4007 9.16721 15.1511 8.48755 16.0518 8.06157C16.9525 7.6356 17.9627 7.48396 18.9515 7.62555C19.9402 7.76714 20.8639 8.19553 21.5991 8.85406C22.3343 9.51258 22.8485 10.3722 23.0747 11.3222C23.3009 12.2722 23.2299 13.2686 22.8702 14.1796L22.2819 9.8211Z" fill="#10A37F" />
-                            <path d="M12 2C10.0222 2 8.08879 2.58649 6.4443 3.6853C4.79981 4.78412 3.51809 6.3459 2.76121 8.17317C2.00433 10.0004 1.8063 12.0111 2.19215 13.9509C2.578 15.8907 3.53041 17.6725 4.92893 19.0711C6.32746 20.4696 8.10929 21.422 10.0491 21.8079C11.9889 22.1937 13.9996 21.9957 15.8268 21.2388C17.6541 20.4819 19.2159 19.2002 20.3147 17.5557C21.4135 15.9112 22 13.9778 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2V2Z" fill="#10A37F" />
-                        </svg>
-                        <span class="text-xl md:text-2xl font-bold text-gray-900">OpenAI</span>
+                        <img src="data:image/svg+xml,%3csvg%20viewBox='0%200%201180%20320'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m367.44%20153.84c0%2052.32%2033.6%2088.8%2080.16%2088.8s80.16-36.48%2080.16-88.8-33.6-88.8-80.16-88.8-80.16%2036.48-80.16%2088.8zm129.6%200c0%2037.44-20.4%2061.68-49.44%2061.68s-49.44-24.24-49.44-61.68%2020.4-61.68%2049.44-61.68%2049.44%2024.24%2049.44%2061.68z'/%3e%3cpath%20d='m614.27%20242.64c35.28%200%2055.44-29.76%2055.44-65.52s-20.16-65.52-55.44-65.52c-16.32%200-28.32%206.48-36.24%2015.84v-13.44h-28.8v169.2h28.8v-56.4c7.92%209.36%2019.92%2015.84%2036.24%2015.84zm-36.96-69.12c0-23.76%2013.44-36.72%2031.2-36.72%2020.88%200%2032.16%2016.32%2032.16%2040.32s-11.28%2040.32-32.16%2040.32c-17.76%200-31.2-13.2-31.2-36.48z'/%3e%3cpath%20d='m747.65%20242.64c25.2%200%2045.12-13.2%2054-35.28l-24.72-9.36c-3.84%2012.96-15.12%2020.16-29.28%2020.16-18.48%200-31.44-13.2-33.6-34.8h88.32v-9.6c0-34.56-19.44-62.16-55.92-62.16s-60%2028.56-60%2065.52c0%2038.88%2025.2%2065.52%2061.2%2065.52zm-1.44-106.8c18.24%200%2026.88%2012%2027.12%2025.92h-57.84c4.32-17.04%2015.84-25.92%2030.72-25.92z'/%3e%3cpath%20d='m823.98%20240h28.8v-73.92c0-18%2013.2-27.6%2026.16-27.6%2015.84%200%2022.08%2011.28%2022.08%2026.88v74.64h28.8v-83.04c0-27.12-15.84-45.36-42.24-45.36-16.32%200-27.6%207.44-34.8%2015.84v-13.44h-28.8z'/%3e%3cpath%20d='m1014.17%2067.68-65.28%20172.32h30.48l14.64-39.36h74.4l14.88%2039.36h30.96l-65.28-172.32zm16.8%2034.08%2027.36%2072h-54.24z'/%3e%3cpath%20d='m1163.69%2068.18h-30.72v172.32h30.72z'/%3e%3cpath%20d='m297.06%20130.97c7.26-21.79%204.76-45.66-6.85-65.48-17.46-30.4-52.56-46.04-86.84-38.68-15.25-17.18-37.16-26.95-60.13-26.81-35.04-.08-66.13%2022.48-76.91%2055.82-22.51%204.61-41.94%2018.7-53.31%2038.67-17.59%2030.32-13.58%2068.54%209.92%2094.54-7.26%2021.79-4.76%2045.66%206.85%2065.48%2017.46%2030.4%2052.56%2046.04%2086.84%2038.68%2015.24%2017.18%2037.16%2026.95%2060.13%2026.8%2035.06.09%2066.16-22.49%2076.94-55.86%2022.51-4.61%2041.94-18.7%2053.31-38.67%2017.57-30.32%2013.55-68.51-9.94-94.51zm-120.28%20168.11c-14.03.02-27.62-4.89-38.39-13.88.49-.26%201.34-.73%201.89-1.07l63.72-36.8c3.26-1.85%205.26-5.32%205.24-9.07v-89.83l26.93%2015.55c.29.14.48.42.52.74v74.39c-.04%2033.08-26.83%2059.9-59.91%2059.97zm-128.84-55.03c-7.03-12.14-9.56-26.37-7.15-40.18.47.28%201.3.79%201.89%201.13l63.72%2036.8c3.23%201.89%207.23%201.89%2010.47%200l77.79-44.92v31.1c.02.32-.13.63-.38.83l-64.41%2037.19c-28.69%2016.52-65.33%206.7-81.92-21.95zm-16.77-139.09c7-12.16%2018.05-21.46%2031.21-26.29%200%20.55-.03%201.52-.03%202.2v73.61c-.02%203.74%201.98%207.21%205.23%209.06l77.79%2044.91-26.93%2015.55c-.27.18-.61.21-.91.08l-64.42-37.22c-28.63-16.58-38.45-53.21-21.95-81.89zm221.26%2051.49-77.79-44.92%2026.93-15.54c.27-.18.61-.21.91-.08l64.42%2037.19c28.68%2016.57%2038.51%2053.26%2021.94%2081.94-7.01%2012.14-18.05%2021.44-31.2%2026.28v-75.81c.03-3.74-1.96-7.2-5.2-9.06zm26.8-40.34c-.47-.29-1.3-.79-1.89-1.13l-63.72-36.8c-3.23-1.89-7.23-1.89-10.47%200l-77.79%2044.92v-31.1c-.02-.32.13-.63.38-.83l64.41-37.16c28.69-16.55%2065.37-6.7%2081.91%2022%206.99%2012.12%209.52%2026.31%207.15%2040.1zm-168.51%2055.43-26.94-15.55c-.29-.14-.48-.42-.52-.74v-74.39c.02-33.12%2026.89-59.96%2060.01-59.94%2014.01%200%2027.57%204.92%2038.34%2013.88-.49.26-1.33.73-1.89%201.07l-63.72%2036.8c-3.26%201.85-5.26%205.31-5.24%209.06l-.04%2089.79zm14.63-31.54%2034.65-20.01%2034.65%2020v40.01l-34.65%2020-34.65-20z'/%3e%3c/svg%3e" alt="Open AI logo" width="200">
                     </div>
 
                     <!-- Google -->
-                    <div class="opacity-80 hover:opacity-100 transition-opacity duration-200">
-                        <svg class="h-8 md:h-10" viewBox="0 0 120 40" fill="none">
-                            <text x="0" y="30" font-family="Arial, sans-serif" font-size="32" font-weight="700">
-                                <tspan fill="#4285F4">G</tspan>
-                                <tspan fill="#EA4335">o</tspan>
-                                <tspan fill="#FBBC05">o</tspan>
-                                <tspan fill="#4285F4">g</tspan>
-                                <tspan fill="#34A853">l</tspan>
-                                <tspan fill="#EA4335">e</tspan>
-                            </text>
-                        </svg>
+                    <div class="opacity-8  0 hover:opacity-100 transition-opacity duration-200">
+                        <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20272%2092'%20width='272'%20height='92'%3e%3cpath%20fill='%23EA4335'%20d='M115.75%2047.18c0%2012.77-9.99%2022.18-22.25%2022.18s-22.25-9.41-22.25-22.18C71.25%2034.32%2081.24%2025%2093.5%2025s22.25%209.32%2022.25%2022.18zm-9.74%200c0-7.98-5.79-13.44-12.51-13.44S80.99%2039.2%2080.99%2047.18c0%207.9%205.79%2013.44%2012.51%2013.44s12.51-5.55%2012.51-13.44z'/%3e%3cpath%20fill='%23FBBC05'%20d='M163.75%2047.18c0%2012.77-9.99%2022.18-22.25%2022.18s-22.25-9.41-22.25-22.18c0-12.85%209.99-22.18%2022.25-22.18s22.25%209.32%2022.25%2022.18zm-9.74%200c0-7.98-5.79-13.44-12.51-13.44s-12.51%205.46-12.51%2013.44c0%207.9%205.79%2013.44%2012.51%2013.44s12.51-5.55%2012.51-13.44z'/%3e%3cpath%20fill='%234285F4'%20d='M209.75%2026.34v39.82c0%2016.38-9.66%2023.07-21.08%2023.07-10.75%200-17.22-7.19-19.66-13.07l8.48-3.53c1.51%203.61%205.21%207.87%2011.17%207.87%207.31%200%2011.84-4.51%2011.84-13v-3.19h-.34c-2.18%202.69-6.38%205.04-11.68%205.04-11.09%200-21.25-9.66-21.25-22.09%200-12.52%2010.16-22.26%2021.25-22.26%205.29%200%209.49%202.35%2011.68%204.96h.34v-3.61h9.25zm-8.56%2020.92c0-7.81-5.21-13.52-11.84-13.52-6.72%200-12.35%205.71-12.35%2013.52%200%207.73%205.63%2013.36%2012.35%2013.36%206.63%200%2011.84-5.63%2011.84-13.36z'/%3e%3cpath%20fill='%2334A853'%20d='M225%203v65h-9.5V3h9.5z'/%3e%3cpath%20fill='%23EA4335'%20d='M262.02%2054.48l7.56%205.04c-2.44%203.61-8.32%209.83-18.48%209.83-12.6%200-22.01-9.74-22.01-22.18%200-13.19%209.49-22.18%2020.92-22.18%2011.51%200%2017.14%209.16%2018.98%2014.11l1.01%202.52-29.65%2012.28c2.27%204.45%205.8%206.72%2010.75%206.72%204.96%200%208.4-2.44%2010.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95%200-11.84%204.37-11.59%2012.93z'/%3e%3cpath%20fill='%234285F4'%20d='M35.29%2041.41V32H67c.31%201.64.47%203.58.47%205.68%200%207.06-1.93%2015.79-8.15%2022.01-6.05%206.3-13.78%209.66-24.02%209.66C16.32%2069.35.36%2053.89.36%2034.91.36%2015.93%2016.32.47%2035.3.47c10.5%200%2017.98%204.12%2023.6%209.49l-6.64%206.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86%200-24.7%2011.17-24.7%2025.03%200%2013.86%2010.84%2025.03%2024.7%2025.03%208.99%200%2014.11-3.61%2017.39-6.89%202.66-2.66%204.41-6.46%205.1-11.65l-22.49.01z'/%3e%3c/svg%3e" alt="">
                     </div>
+
                 </div>
             </div>
         </section>
@@ -368,6 +386,9 @@
                 </div>
             </div>
         </footer>
+
+    </section>
+
 </body>
 
 </html>
