@@ -3,15 +3,17 @@ include '../../../config/konfig.php';
 
 $username = "Guest";
 $email = "Tidak ada email";
+$avatar   = "default.jpeg";
 
 if (isset($_SESSION['user_id'])) {
     $userId = intval($_SESSION['user_id']);
-    $query = "SELECT username, email FROM users WHERE id = $userId";
+    $query = "SELECT username, email, avatar_url FROM users WHERE id = $userId";
     $result = mysqli_query($conn, $query);
 
     if ($row = mysqli_fetch_assoc($result)) {
         $username = $row['username'] ?: "Guest";
         $email = $row['email'] ?: "Tidak ada email";
+        $avatar = $row['avatar_url'] ?: "default.jpeg";
     }
 }
 
@@ -43,7 +45,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body class="h-screen bg-[#E4E9F7] transition-all">
 
     <!-- Sidebar -->
-    <aside class="w-[220px] h-screen bg-white border-r border-gray-200 flex flex-col fixed z-10">
+    <aside class="w-[240px] h-screen bg-white border-r border-gray-200 flex flex-col fixed z-10">
         <div class="p-6 border-b border-gray-200">
             <h1 class="flex items-center text-[50px] font-bold justify-center">Spark<span class="text-blue-500">.</span>
             </h1>
@@ -111,8 +113,10 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <!-- User Profile -->
         <div class="flex items-center justify-between w-50 p-6 border gap-2">
             <div class="flex items-center space-x-3">
-                <img src="../assets/img/Enyok.jpg" alt="Foto Profil"
-                    class="w-9 h-9 rounded-full bg-gray-200 object-cover">
+                <img src="../../src/assets/uploads/avatars/<?= htmlspecialchars($avatar) ?>"
+                    alt="Foto Profil"
+                    class="w-11 h-11 rounded-full bg-gray-200 object-cover">
+
                 <div>
                     <p class="text-[15px] font-semibold text-gray-900">
                         <?php echo htmlspecialchars($username) ?>
