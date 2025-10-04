@@ -64,7 +64,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <span class="text-[15px]">Home</span>
             </a>
             <!-- <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank" -->
-            <a href="../../public/views/interview.php"
+            <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank"
                 class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
    <?php echo $current_page == 'interview.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

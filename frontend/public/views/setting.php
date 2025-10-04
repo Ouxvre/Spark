@@ -106,7 +106,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <?php include '../../src/components/sidebar.php' ?>
 
     <!-- Main content -->
-    <main class="flex-1 p-5 ml-[220px] w-full h-dvh ">
+    <main class="flex-1 p-5 ml-[280px] w-full h-dvh ">
         <div class="glass-effect rounded-2xl shadow-2xl w-full mx-auto md:p-2 h-full overflow-hidden">
 
             <div class="flex items-center justify-between mb-4 py-1.5 border-b border-gray-200">
