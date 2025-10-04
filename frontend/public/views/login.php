@@ -3,11 +3,9 @@
 <?php if (isset($_GET['registered']) && $_GET['registered'] == 'success'): ?>
   <div id="toast">✅ Registrasi berhasil! Silakan login.</div>
   <script>
-    // munculkan toast
     let toast = document.getElementById("toast");
     toast.classList.add("show");
 
-    // auto hilang setelah 3 detik
     setTimeout(() => {
       toast.classList.remove("show");
     }, 3000);

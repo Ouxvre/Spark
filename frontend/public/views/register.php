@@ -103,7 +103,7 @@
       <form action="../../../backend/auth/register.php" method="POST" class="flex flex-col gap-6 w-80">
         <input
           type="text"
-          name="name"
+          name="username"
           placeholder="username"
           required
           class="border border-gray-300 rounded-full px-6 py-3 text-[16px] font-medium focus:outline-none focus:ring-2 focus:ring-blue-400" />

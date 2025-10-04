@@ -13,6 +13,10 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
 <body>
 
     <?php include '../../src/components/sidebar.php'?>
+    
+    <div style="margin-left:220px; padding:20px;">
+        <h1>Selamat Datang di Dashboard</h1>
+    </div>
 
 </body>
 </html>

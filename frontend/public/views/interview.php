@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+include(__DIR__ . '/../../../backend/include/check_login.php');
+?>
+
 <html lang="id">
 
 <head>

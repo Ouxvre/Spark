@@ -1,6 +1,23 @@
-<?php 
-  $current_page = basename($_SERVER['PHP_SELF']); 
+<?php
+include '../../../config/konfig.php';
+
+$username = "Guest";
+$email = "Tidak ada email";
+
+if (isset($_SESSION['user_id'])) {
+    $userId = intval($_SESSION['user_id']);
+    $query = "SELECT username, email FROM users WHERE id = $userId";
+    $result = mysqli_query($conn, $query);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        $username = $row['username'] ?: "Guest";
+        $email = $row['email'] ?: "Tidak ada email";
+    }
+}
+
+$current_page = basename($_SERVER['PHP_SELF']);
 ?>
+
 
 
 <html lang="id">
@@ -13,13 +30,13 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Poppins';
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins';
+        }
     </style>
 </head>
 
@@ -97,17 +114,21 @@
                 <img src="../assets/img/Enyok.jpg" alt="Foto Profil"
                     class="w-9 h-9 rounded-full bg-gray-200 object-cover">
                 <div>
-                    <p class="text-[15px] font-semibold text-gray-900">Dummy</p>
-                    <p class="text-[10px] text-gray-600">dummy@gmail.com</p>
+                    <p class="text-[15px] font-semibold text-gray-900">
+                        <?php echo htmlspecialchars($username) ?>
+                    </p>
+                    <p class="text-[10px] text-gray-600">
+                        <?php echo htmlspecialchars($email) ?>
+                    </p>
                 </div>
             </div>
 
-            <a href="../../backend/auth/logout.php" class="text-gray-700 hover:text-black">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
-                    </svg>
+            <a href="../../../backend/auth/logout.php" class="text-gray-700 hover:text-black">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
+                </svg>
             </a>
         </div>
     </aside>

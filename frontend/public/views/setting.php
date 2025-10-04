@@ -1,6 +1,7 @@
-<?php 
+<?php
+include(__DIR__ . '/../../../backend/include/check_login.php');
 
-  $current_page = basename($_SERVER['PHP_SELF']); 
+$current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +103,7 @@
 <body class="flex min-h-screen h-screen bg-[#E4E9F7] transition-all">
 
     <!-- Sidebar sudah di-include -->
-    <?php include '../../src/components/sidebar.php'?>
+    <?php include '../../src/components/sidebar.php' ?>
 
     <!-- Main content -->
     <main class="flex-1 p-5 ml-[220px] w-full h-dvh ">
@@ -116,7 +117,7 @@
 
                 <!-- Search bar -->
                 <div class="relative w-72 hidden md:block">
-                    <input type="search" placeholder="Search settings..." 
+                    <input type="search" placeholder="Search settings..."
                         class="w-full pl-12 pr-4 py-3 text-sm border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" />
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -207,7 +208,7 @@
                         <div>
                             <label for="profileName" class="block text-sm font-semibold text-gray-800 mb-2">Profile Name</label>
                             <div class="relative">
-                                <input id="profileName" name="profileName" type="text" placeholder="Supeno" 
+                                <input id="profileName" name="profileName" type="text" placeholder="Supeno"
                                     class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -220,7 +221,7 @@
                             <label for="username" class="block text-sm font-semibold text-gray-800 mb-2">Username</label>
                             <div class="relative">
                                 <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">@</span>
-                                <input id="username" name="username" type="text" placeholder="Supeno12" 
+                                <input id="username" name="username" type="text" placeholder="Supeno12"
                                     class="input-field w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
                             </div>
                             <!-- <p class="text-xs text-gray-500 mt-2">Your unique identifier across the platform</p> -->
@@ -229,21 +230,21 @@
                         <!-- About Me -->
                         <div>
                             <label for="aboutMe" class="block text-sm font-semibold text-gray-800 mb-2">About Me</label>
-                            <textarea id="aboutMe" name="aboutMe" rows="3" placeholder="Tell us about yourself..." 
+                            <textarea id="aboutMe" name="aboutMe" rows="3" placeholder="Tell us about yourself..."
                                 class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
                             <!-- <div class="flex justify-between items-center mt-2"> -->
-                                <!-- <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p> -->
-                                <!-- <span class="text-xs text-gray-400">0/500</span> -->
+                            <!-- <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p> -->
+                            <!-- <span class="text-xs text-gray-400">0/500</span> -->
                             <!-- </div> -->
                         </div>
 
                         <!-- Save Button -->
                         <div class="flex justify-end gap-3">
-                            <button type="button" 
+                            <button type="button"
                                 class="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition">
                                 Cancel
                             </button>
-                            <button type="submit" 
+                            <button type="submit"
                                 class="btn-primary px-8 py-3 text-white rounded-xl font-medium shadow-lg">
                                 Save Changes
                             </button>
