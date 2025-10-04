@@ -85,15 +85,16 @@
                         Wawancara kerja itu susah bin ajaib, latihan di Spark. sekarang!
                     </h1>
 
-
                     <p class="text-lg text-blue-100">
                         Latihan wawancara bareng AI di mana aja, kapan aja, tawaran kerja di depan mata!
                     </p>
 
-                    <button
+                    <p class="mb-8"></p>
+
+                    <a href="../public/views/login.php"
                         class="bg-teal-400 hover:bg-teal-500 text-white px-8 py-3 rounded-lg font-semibold text-lg transition shadow-lg">
                         Coba Sekarang!
-                    </button>
+                    </a>
                 </div>
 
 
@@ -158,17 +159,19 @@
 
             <div class="order-2">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] aspect-video">
-                        <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px]">
+                        <img src="../src/assets/img/langkah1.png" alt="contoh"
+                            class="w-full h-auto object-contain">
                     </div>
                 </div>
             </div>
 
+
             <!-- Langkah 2 -->
             <div class="order-4 md:order-3">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] aspect-video">
-                        <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px]">
+                        <img src="../src/assets/img/langkah2.png" alt="contoh" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -200,8 +203,8 @@
 
             <div class="order-6">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] aspect-video">
-                        <img src="../src/assets/img/Enyok.jpg" alt="contoh" class="w-full h-full object-cover">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px]">
+                        <img src="../src/assets/img/langkah3.png" alt="contoh" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -284,9 +287,9 @@
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-6">
                         Besok ada wawancara kerja?
                     </h3>
-                    <button class="bg-teal-400 hover:bg-teal-500 text-indigo-900 font-semibold px-8 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-0.5">
+                    <a href="../public/views/login.php" class="bg-teal-400 hover:bg-teal-500 text-indigo-900 font-semibold px-8 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-0.5">
                         Yuk Latihan Sekarang!
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

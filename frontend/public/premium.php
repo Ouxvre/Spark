@@ -224,7 +224,7 @@
                     <p class="text-xl font-medium">
                         15.000++ <br>Telah merasakan manfaat Spark.
                     </p>
-                    <a href="#"
+                    <a href="../public/views/login.php"
                         class="inline-block bg-[#68BBFF] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#57a5e6] transition">
                         Coba Gratis
                     </a>
@@ -232,42 +232,48 @@
 
                 <!-- Gambar Orang Laptop -->
                 <div class="flex justify-center md:justify-end">
-                    <img src="https://via.placeholder.com/350x250"
+                    <img src="../src/assets/img/foto2.png"
                         alt="Gambar Orang Laptop"
-                        class="rounded-lg shadow-lg">
+                        class="rounded-lg">
                 </div>
             </div>
         </div>
 
         <!-- ================== Kotak Ungu ================== -->
-        <div class="relative z-10 -mt-12">
-            <div class="max-w-4xl mx-auto bg-[#3D3B91] rounded-xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-6">
-                <!-- Gambar Customer Service -->
-                <div class="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
-                    <img src="https://via.placeholder.com/150x150"
-                        alt="Customer Service"
-                        class="object-cover w-full h-full">
-                </div>
+<div class="relative z-10 -mt-12">
+    <div class="max-w-4xl mx-auto bg-[#3D3B91] rounded-xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 relative">
+        
+        <!-- Gambar Customer Service -->
+        <div class="absolute -top-16 left-6 w-44 h-56 overflow-hidden rounded-lg">
+            <img src="../src/assets/img/cs.png"
+                 alt="Customer Service"
+                 class="object-cover w-full h-full">
+        </div>
 
-                <!-- Teks & Tombol -->
-                <div class="flex-1 text-white space-y-4">
-                    <h3 class="text-lg font-semibold">Masih ragu?</h3>
-                    <p class="text-sm md:text-base">
-                        Yuk, tanyakan langsung via WhatsApp atau lihat contoh hasil analisis kami untuk lebih jelasnya!
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="bg-white text-black px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition">
-                            Lihat Analisis Wawancara
-                        </a>
-                        <a href="#"
-                            class="bg-[#00A884] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#00916f] transition">
-                            Hubungi Kami
-                        </a>
-                    </div>
-                </div>
+        <!-- Spasi kosong agar teks tidak ketimpa gambar -->
+        <div class="w-44"></div>
+
+        <!-- Teks & Tombol -->
+        <div class="flex-1 text-white space-y-4">
+            <h3 class="text-lg font-semibold">Masih ragu?</h3>
+            <p class="text-sm md:text-base">
+                Yuk, tanyakan langsung via WhatsApp atau lihat contoh hasil analisis kami untuk lebih jelasnya!
+            </p>
+            <div class="flex gap-4">
+                <a href="#"
+                   class="bg-white text-black px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition">
+                    Lihat Analisis Wawancara
+                </a>
+                <a href="#"
+                   class="bg-[#00A884] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#00916f] transition">
+                    Hubungi Kami
+                </a>
             </div>
         </div>
+    </div>
+</div>
+
+
     </section>
 
 
