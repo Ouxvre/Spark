@@ -28,6 +28,8 @@
             padding: 0;
             font-family: 'Poppins';
             scrollbar-width: none;
+            /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); */
+
         }
 
         [x-cloak] {
@@ -59,7 +61,7 @@
 
                     <!-- Tombol -->
                     <a href="../public/views/login.php"
-                        class="hidden md:inline-block bg-white text-black px-7 py-2 rounded-full font-medium hover:bg-gray-200 text-[15px]">
+                        class="hidden text-shadow-none md:inline-block bg-white text-black px-7 py-2 rounded-full font-medium hover:bg-gray-200 text-[15px]">
                         Get Started
                     </a>
                 </div>
@@ -77,7 +79,7 @@
         </header>
 
         <!-- Hero Content -->
-        <div class="relative z-10 container mx-auto px-8 pt-20 pb-32">
+        <div class="relative z-10 container mx-auto px-8 pt-20 pb-32 ">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="text-white text-center lg:text-left space-y-6">
@@ -113,8 +115,8 @@
                                 class="w-12 h-12 rounded-full">
                             <div>
                                 <div class="font-semibold text-gray-800">Linda</div>
-                                <div class="text-sm text-gray-600">
-                                    Aku suka nonton <br> sound horeg...
+                                <div class="text-sm text-gray-600 text-shadow-none">
+                                    Background pendidikan saya akuntasi, saya ingin...
                                 </div>
                             </div>
                         </div>
@@ -142,7 +144,7 @@
         </div>
 
         <!-- Grid Langkah -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center [text-shadow:1px_1px_2px_rgba(0,0,0,0.25)]">
 
             <!-- Langkah 1 -->
             <div class="order-1">
@@ -159,7 +161,7 @@
 
             <div class="order-2">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px]">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl">
                         <img src="../src/assets/img/langkah1.png" alt="contoh"
                             class="w-full h-auto object-contain">
                     </div>
@@ -170,7 +172,7 @@
             <!-- Langkah 2 -->
             <div class="order-4 md:order-3">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px]">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl">
                         <img src="../src/assets/img/langkah2.png" alt="contoh" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -203,7 +205,7 @@
 
             <div class="order-6">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px]">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl">
                         <img src="../src/assets/img/langkah3.png" alt="contoh" class="w-full h-full object-cover">
                     </div>
                 </div>

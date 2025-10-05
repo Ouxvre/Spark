@@ -33,7 +33,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
     <?php include '../../src/components/sidebar.php'; ?>
 
     <!-- Main content -->
-    <div class="flex-1 flex items-center justify-center px-4">
+    <main class="flex-1 flex items-center justify-center px-4  ml-[240px]">
 
         <div class="flex flex-col items-center text-center max-w-md">
 
@@ -71,7 +71,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
             </p>
 
         </div>
-    </div>
+    </main>
 
 </body>
 

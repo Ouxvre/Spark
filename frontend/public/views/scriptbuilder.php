@@ -17,7 +17,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
 <body class="bg-gray-50">
     <?php include '../../src/components/sidebar.php'; ?>
 
-    <div class="min-h-screen p-8 flex items-center justify-center">
+    <main class="min-h-screen p-8 flex items-center justify-center ml-[240px]">
         <div class="w-full max-w-4xl">
             <div class="bg-white rounded-lg shadow-sm p-8">
                 <h1 class="text-3xl font-bold mb-2">Interview Script Generator</h1>
@@ -107,7 +107,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         let generatedScriptText = '';
