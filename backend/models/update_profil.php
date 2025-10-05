@@ -9,7 +9,7 @@ if (!$userId) {
     die('Unauthorized');
 }
 
-// Folder tempat avatar disimpan (✅ benar mengarah ke frontend/src/assets/img/uploads/avatars)
+// Folder tempat avatar disimpan
 $uploadDir = __DIR__ . '/../../frontend/src/assets/img/uploads/avatars/';
 
 // Pastikan folder ada
@@ -17,7 +17,7 @@ if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0777, true);
 }
 
-// Ambil data lama user (untuk hapus avatar lama)
+// Ambil data lama user (untuk hapus avatar lama dan username)
 $stmt = $conn->prepare("SELECT username, bio, avatar_url FROM users WHERE id = ?");
 $stmt->bind_param("i", $userId);
 $stmt->execute();
@@ -33,7 +33,10 @@ $newUsername = trim($_POST['username'] ?? '');
 $newBio = trim($_POST['aboutMe'] ?? '');
 $removeAvatar = isset($_POST['removeAvatar']) && $_POST['removeAvatar'] === '1';
 
-// ✅ Jika user klik Remove avatar
+// Jika username kosong, gunakan username lama
+$newUsername = $newUsername !== '' ? $newUsername : $current['username'];
+
+// Jika user klik Remove avatar
 if ($removeAvatar) {
     if ($oldAvatar !== 'default.jpeg' && file_exists($uploadDir . $oldAvatar)) {
         unlink($uploadDir . $oldAvatar);
@@ -41,7 +44,7 @@ if ($removeAvatar) {
     $newAvatar = 'default.jpeg';
 }
 
-// ✅ Jika user upload avatar baru
+// Jika user upload avatar baru
 if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
     $file = $_FILES['avatar'];
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
@@ -65,7 +68,7 @@ if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
     }
 }
 
-// ✅ Update data ke database
+// Update data ke database
 $stmt = $conn->prepare("UPDATE users SET username = ?, bio = ?, avatar_url = ?, updated_at = NOW() WHERE id = ?");
 $stmt->bind_param("sssi", $newUsername, $newBio, $newAvatar, $userId);
 
