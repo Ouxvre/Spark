@@ -1,7 +1,7 @@
 <?php
 session_start();
-include(__DIR__ . '../../../config/konfig.php');
-include(__DIR__ . '../../../backend/include/check_login.php');
+include(__DIR__ . '/../../config/konfig.php');
+include(__DIR__ . '/../../backend/include/check_login.php');
 
 $userId = $_SESSION['user_id'] ?? null;
 if (!$userId) {
@@ -9,8 +9,8 @@ if (!$userId) {
     die('Unauthorized');
 }
 
-// Folder tempat avatar disimpan
-$uploadDir = __DIR__ . '../../../src/assets/img/uploads/avatars';
+// Folder tempat avatar disimpan (✅ benar mengarah ke frontend/src/assets/img/uploads/avatars)
+$uploadDir = __DIR__ . '/../../frontend/src/assets/img/uploads/avatars/';
 
 // Pastikan folder ada
 if (!is_dir($uploadDir)) {

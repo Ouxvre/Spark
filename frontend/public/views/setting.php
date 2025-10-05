@@ -198,17 +198,33 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             <div class="flex flex-col sm:flex-row items-center gap-6">
                                 <!-- Avatar -->
                                 <div class="profile-avatar w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-white shadow-lg relative z-0 overflow-hidden">
-                                    <?php if (!empty($user['avatar_url']) && file_exists(__DIR__ . '/../../../uploads/avatars/' . $user['avatar_url'])): ?>
-                                        <img id="avatarPreview" src="<?php echo '../../../uploads/avatars/' . htmlspecialchars($user['avatar_url']); ?>"
-                                            alt="Avatar" class="w-full h-full object-cover rounded-full">
+                                    <?php
+                                    // Path folder avatar baru (benar, ada di frontend/src/assets/uploads/avatars/)
+                                    $avatarPath = __DIR__ . '../src/assets/uploads/avatars/';
+
+                                    if (!empty($user['avatar_url']) && file_exists($avatarPath . $user['avatar_url'])):
+                                    ?>
+                                        <img
+                                            id="avatarPreview"
+                                            src="<?php echo '../src/assets/uploads/avatars/' . htmlspecialchars($user['avatar_url']); ?>"
+                                            alt="Avatar"
+                                            class="w-full h-full object-cover rounded-full">
                                     <?php else: ?>
-                                        <svg id="defaultAvatar" xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        <svg
+                                            id="defaultAvatar"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="w-14 h-14"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
                                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                         </svg>
                                     <?php endif; ?>
                                 </div>
-
                                 <!-- Buttons -->
                                 <div class="flex flex-col sm:flex-row gap-3">
                                     <!-- Upload Button (trigger input file) -->
