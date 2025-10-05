@@ -2,6 +2,13 @@
 include(__DIR__ . '/../../../backend/include/check_login.php');
 ?>
 
+<?php
+// langsung redirect ke website lain
+header("Location: https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o");
+exit;
+?>
+
+
 <html lang="id">
 
 <head>

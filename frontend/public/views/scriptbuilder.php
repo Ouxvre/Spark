@@ -7,7 +7,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Script Generator</title>
+    <title>Spark - Interview Script Generator</title>
 
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,12 +20,12 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
     <main class="min-h-screen p-8 flex items-center justify-center ml-[240px]">
         <div class="w-full max-w-4xl">
             <div class="bg-white rounded-lg shadow-sm p-8">
-                <h1 class="text-3xl font-bold mb-2">Interview Script Generator</h1>
-                <p class="text-gray-500 mb-8">Generate a formal interview script based on your information</p>
+                <h1 class="text-3xl font-bold mb-1">Interview Script Generator</h1>
+                <p class="text-gray-500 mb-3">Generate a formal interview script based on your information</p>
 
                 <!-- Form Section -->
                 <div id="formSection">
-                    <div class="space-y-6">
+                    <div class="space-y-3">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
                             <input
@@ -59,7 +59,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
                                 id="experience"
                                 placeholder="Describe your relevant experience"
                                 rows="4"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+                                class="w-full px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
                         </div>
 
                         <!-- Error Message -->

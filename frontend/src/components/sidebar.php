@@ -24,6 +24,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <html lang="id">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,6 +42,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         }
     </style>
 </head>
+
 <body class="h-screen bg-[#E4E9F7] transition-all">
     <!-- Sidebar -->
     <aside class="w-[240px] h-screen bg-white border-r border-gray-200 flex flex-col fixed z-10">
@@ -57,7 +59,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </svg>
                 <span class="text-[15px]">Home</span>
             </a>
-            <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" target="_blank" class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
+            <!-- <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o" -->
+            <a href="../../public/views/interview.php"
+            target="_blank" class="flex items-center gap-3 px-4 py-3 rounded-lg mb-2.5 transition 
    <?php echo $current_page == 'interview.php' ? 'bg-gray-100 text-gray-900' : 'text-gray-700 hover:bg-gray-100'; ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
@@ -104,4 +108,5 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </div>
     </aside>
 </body>
+
 </html>
