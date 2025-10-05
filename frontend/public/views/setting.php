@@ -1,5 +1,14 @@
 <?php
 include(__DIR__ . '/../../../backend/include/check_login.php');
+include(__DIR__ . '../../../../config/konfig.php');
+
+$userId = $_SESSION['user_id'];
+$stmt = $conn->prepare("SELECT username, bio, avatar_url FROM users WHERE id = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+$stmt->close();
 
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
@@ -182,61 +191,135 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
                 <!-- Right content -->
                 <section class="flex-1">
-                    <form action="#" method="POST" class="space-y-2">
+                    <form action="../../../backend/models/update_profil.php" enctype="multipart/form-data" method="POST" class="space-y-2">
                         <!-- Profile Picture -->
                         <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-3">
                             <label class="block text-sm font-semibold text-gray-800 mb-4 z-100">Profile Picture</label>
                             <div class="flex flex-col sm:flex-row items-center gap-6">
-                                <div class="profile-avatar w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-white shadow-lg relative z-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                    </svg>
+                                <!-- Avatar -->
+                                <div class="profile-avatar w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center text-white shadow-lg relative z-0 overflow-hidden">
+                                    <?php if (!empty($user['avatar_url']) && file_exists(__DIR__ . '/../../../uploads/avatars/' . $user['avatar_url'])): ?>
+                                        <img id="avatarPreview" src="<?php echo '../../../uploads/avatars/' . htmlspecialchars($user['avatar_url']); ?>"
+                                            alt="Avatar" class="w-full h-full object-cover rounded-full">
+                                    <?php else: ?>
+                                        <svg id="defaultAvatar" xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                        </svg>
+                                    <?php endif; ?>
                                 </div>
+
+                                <!-- Buttons -->
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button type="button" class="px-6 py-3 bg-white text-purple-600 rounded-xl font-medium hover:shadow-lg transition border border-purple-200 hover:bg-purple-50">
+                                    <!-- Upload Button (trigger input file) -->
+                                    <button type="button" id="uploadBtn" class="px-6 py-3 bg-white text-purple-600 rounded-xl font-medium hover:shadow-lg transition border border-purple-200 hover:bg-purple-50">
                                         Upload New
                                     </button>
-                                    <button type="button" class="px-6 py-3 bg-white text-red-600 rounded-xl font-medium hover:shadow-lg transition border border-red-200 hover:bg-red-50">
+
+                                    <!-- Remove Button -->
+                                    <button type="button" id="removeBtn" class="px-6 py-3 bg-white text-red-600 rounded-xl font-medium hover:shadow-lg transition border border-red-200 hover:bg-red-50">
                                         Remove
                                     </button>
                                 </div>
+
+                                <!-- Hidden Input for File -->
+                                <input type="file" name="avatar" id="avatarInput" accept="image/*" class="hidden" />
+                                <input type="hidden" name="remove_avatar" id="removeAvatar" value="0" />
                             </div>
-                            <!-- <p class="text-xs text-gray-500 mt-4">Recommended: Square image, at least 400x400px</p> -->
                         </div>
 
-                        <!-- Profile Name -->
-                        <div>
-                            <label for="profileName" class="block text-sm font-semibold text-gray-800 mb-2">Profile Name</label>
-                            <div class="relative">
-                                <input id="profileName" name="profileName" type="text" placeholder="Supeno"
-                                    class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                </svg>
-                            </div>
-                        </div>
+                        <script>
+                            const uploadBtn = document.getElementById('uploadBtn');
+                            const removeBtn = document.getElementById('removeBtn');
+                            const fileInput = document.getElementById('avatarInput');
+                            const avatarPreview = document.getElementById('avatarPreview');
+                            const defaultAvatar = document.getElementById('defaultAvatar');
+
+                            // Klik tombol → buka file picker
+                            uploadBtn.addEventListener('click', () => fileInput.click());
+
+                            // Preview gambar sebelum submit
+                            fileInput.addEventListener('change', function(event) {
+                                const file = event.target.files[0];
+                                if (file) {
+                                    const reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        if (defaultAvatar) defaultAvatar.style.display = 'none';
+                                        if (avatarPreview) {
+                                            avatarPreview.src = e.target.result;
+                                            avatarPreview.style.display = 'block';
+                                        } else {
+                                            const img = document.createElement('img');
+                                            img.src = e.target.result;
+                                            img.className = "w-full h-full object-cover rounded-full";
+                                            img.id = "avatarPreview";
+                                            document.querySelector('.profile-avatar').appendChild(img);
+                                        }
+                                    };
+                                    reader.readAsDataURL(file);
+                                }
+                            });
+
+                            // Remove avatar → reset ke default
+                            removeBtn.addEventListener('click', () => {
+                                if (avatarPreview) avatarPreview.remove();
+                                if (defaultAvatar) defaultAvatar.style.display = 'block';
+                                fileInput.value = ''; // kosongkan file input
+                                document.getElementById('removeAvatar').value = '1'; // tandai untuk backend
+                            });
+                        </script>
+
 
                         <!-- Username -->
                         <div>
                             <label for="username" class="block text-sm font-semibold text-gray-800 mb-2">Username</label>
                             <div class="relative">
-                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium">@</span>
-                                <input id="username" name="username" type="text" placeholder="Supeno12"
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-medium pointer-events-none">@</span>
+                                <input
+                                    id="username"
+                                    name="username"
+                                    type="text"
+                                    placeholder="<?php echo htmlspecialchars($username); ?>"
                                     class="input-field w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
                             </div>
-                            <!-- <p class="text-xs text-gray-500 mt-2">Your unique identifier across the platform</p> -->
                         </div>
 
                         <!-- About Me -->
                         <div>
                             <label for="aboutMe" class="block text-sm font-semibold text-gray-800 mb-2">About Me</label>
-                            <textarea id="aboutMe" name="aboutMe" rows="3" placeholder="Tell us about yourself..."
+                            <textarea
+                                id="aboutMe"
+                                name="aboutMe"
+                                rows="3"
+                                maxlength="150"
+                                placeholder="Tell us about yourself..."
                                 class="input-field w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"></textarea>
-                            <!-- <div class="flex justify-between items-center mt-2"> -->
-                            <!-- <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p> -->
-                            <!-- <span class="text-xs text-gray-400">0/500</span> -->
-                            <!-- </div> -->
+
+                            <div class="flex justify-between items-center mt-2">
+                                <p class="text-xs text-gray-500">Share your interests, goals, or anything you'd like others to know</p>
+                                <span id="charCount" class="text-xs text-gray-400">0/150</span>
+                            </div>
                         </div>
+
+                        <script>
+                            const textarea = document.getElementById('aboutMe');
+                            const counter = document.getElementById('charCount');
+                            const max = 150;
+
+                            textarea.addEventListener('input', () => {
+                                const length = textarea.value.length;
+                                counter.textContent = `${length}/${max}`;
+
+                                if (length >= max) {
+                                    counter.classList.remove('text-gray-400');
+                                    counter.classList.add('text-red-500');
+                                } else {
+                                    counter.classList.remove('text-red-500');
+                                    counter.classList.add('text-gray-400');
+                                }
+                            });
+                        </script>
+
 
                         <!-- Save Button -->
                         <div class="flex justify-end gap-3">
