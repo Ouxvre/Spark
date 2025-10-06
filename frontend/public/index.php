@@ -55,7 +55,10 @@
                 <div class="flex items-center space-x-20">
                     <!-- Menu Desktop -->
                     <nav class="hidden md:flex items-center space-x-10">
-                        <a href="#cara-kerja" class="hover:text-gray-300">Cara Kerja</a>
+                        <a href="#cara-kerja" class="hover:text-gray-300">
+                            <!-- Cara Kerja -->
+                            Ways of Working
+                        </a>
                         <a href="../public/premium.php" class="hover:text-gray-300">Premium</a>
                     </nav>
 
@@ -84,18 +87,21 @@
                 <!-- Left Content -->
                 <div class="text-white text-center lg:text-left space-y-6">
                     <h1 class="text-3xl lg:text-5xl font-bold leading-relaxed">
-                        Wawancara kerja itu susah bin ajaib, latihan di Spark. sekarang!
+                        <!-- Wawancara kerja itu susah bin ajaib, latihan di Spark. sekarang! -->
+                        Job interviews are hard and magical, practice on Spark. Now!
                     </h1>
 
                     <p class="text-lg text-blue-100">
-                        Latihan wawancara bareng AI di mana aja, kapan aja, tawaran kerja di depan mata!
+                        <!-- Latihan wawancara bareng AI di mana aja, kapan aja, tawaran kerja di depan mata! -->
+                        Practice interviews with AI anywhere, anytime, job offers right in front of you!
                     </p>
 
                     <p class="mb-8"></p>
 
                     <a href="../public/views/login.php"
                         class="bg-teal-400 hover:bg-teal-500 text-white px-8 py-3 rounded-lg font-semibold text-lg transition shadow-lg">
-                        Coba Sekarang!
+                        <!-- Coba Sekarang! -->
+                        Try Now!
                     </a>
                 </div>
 
@@ -116,7 +122,8 @@
                             <div>
                                 <div class="font-semibold text-gray-800">Linda</div>
                                 <div class="text-sm text-gray-600 text-shadow-none">
-                                    Background pendidikan saya akuntasi, saya ingin...
+                                    <!-- Background pendidikan saya akuntasi, saya ingin... -->
+                                    My educational background is accounting, I want to...
                                 </div>
                             </div>
                         </div>
@@ -133,7 +140,8 @@
         <!-- Title + Arrow -->
         <div class="flex flex-col items-center justify-center mb-12 text-center">
             <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-wide mb-4">
-                CARA KERJA
+                <!-- CARA KERJA -->
+                Ways of Working
             </h1>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -149,13 +157,16 @@
             <!-- Langkah 1 -->
             <div class="order-1">
                 <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
-                    Langkah 1
+                    <!-- Langkah 1 -->
+                    Step 1
                 </p>
                 <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
-                    Isi posisi yang ingin dilamar
+                    <!-- Isi posisi yang ingin dilamar -->
+                    Fill in the position you wish to apply for
                 </h2>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    Ketik posisi dan nama perusahaan yang ingin dilamar, AI akan bentuk latihan interview yang sesuai
+                    <!-- Ketik posisi dan nama perusahaan yang ingin dilamar, AI akan bentuk latihan interview yang sesuai -->
+                    Type in the position and company name you wish to apply for, AI will create a suitable interview practice.
                 </p>
             </div>
 
@@ -180,26 +191,32 @@
 
             <div class="order-3 md:order-4">
                 <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
-                    Langkah 2
+                    <!-- Langkah 2 -->
+                    Step 2
                 </p>
                 <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
-                    Wawancara langsung pakai suara
+                    <!-- Wawancara langsung pakai suara -->
+                    Live interviews using voice
                 </h2>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    Wawancara bareng AI kami, seperti ngobrol dengan HR beneran!
+                    <!-- Wawancara bareng AI kami, seperti ngobrol dengan HR beneran! -->
+                    Interview with our AI, just like chatting with a real HR person!
                 </p>
             </div>
 
             <!-- Langkah 3 -->
             <div class="order-5">
                 <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
-                    Langkah 3
+                    <!-- Langkah 3 -->
+                    Step 3
                 </p>
                 <h2 class="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
-                    Dapat masukan langsung setelah wawancara
+                    <!-- Dapat masukan langsung setelah wawancara -->
+                    Get immediate feedback after the interview
                 </h2>
                 <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-                    Dapatkan saran dan tips untuk wawancara yang lebih baik langsung setelah wawancara selesai!
+                    <!-- Dapatkan saran dan tips untuk wawancara yang lebih baik langsung setelah wawancara selesai! -->
+                    Get advice and tips for a better interview right after the interview is over!
                 </p>
             </div>
 
@@ -221,7 +238,8 @@
         <section class="py-20 px-4">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-900">
-                    Pertanyaan yang Sering Diajukan
+                    <!-- Pertanyaan yang Sering Diajukan -->
+                    Frequently Asked Questions
                 </h2>
 
                 <!-- FAQ Items -->
@@ -231,7 +249,8 @@
                     <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all">
                         <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-base md:text-lg text-gray-700 font-medium">
-                                Apakah latihannya bisa pakai semua bahasa?
+                                <!-- Apakah latihannya bisa pakai semua bahasa? -->
+                                Can the exercises be done in all languages?
                             </span>
                             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -239,7 +258,8 @@
                         </button>
                         <div x-show="open" x-collapse x-cloak class="px-6 pb-4">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-                                Ya, latihan kami mendukung berbagai bahasa untuk membantu Anda berlatih sesuai kebutuhan.
+                                <!-- Ya, latihan kami mendukung berbagai bahasa untuk membantu Anda berlatih sesuai kebutuhan. -->
+                                Yes, our exercises support multiple languages ​​to help you practice as needed.
                             </p>
                         </div>
                     </div>
@@ -248,7 +268,8 @@
                     <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all">
                         <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-base md:text-lg text-gray-700 font-medium">
-                                Apakah bisa menggunakan HP untuk latihan?
+                                <!-- Apakah bisa menggunakan HP untuk latihan? -->
+                                Can I use my cell phone for practice?
                             </span>
                             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -256,7 +277,8 @@
                         </button>
                         <div x-show="open" x-collapse x-cloak class="px-6 pb-4">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-                                Tentu saja! Platform kami responsif dan dapat diakses lewat HP, tablet, maupun komputer.
+                                <!-- Tentu saja! Platform kami responsif dan dapat diakses lewat HP, tablet, maupun komputer. -->
+                                Of course! Our platform is responsive and accessible on mobile phones, tablets, and computers.
                             </p>
                         </div>
                     </div>
@@ -265,7 +287,8 @@
                     <div x-data="{ open: false }" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all">
                         <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
                             <span class="text-base md:text-lg text-gray-700 font-medium">
-                                Apakah gratis untuk latihan?
+                                <!-- Apakah gratis untuk latihan? -->
+                                Is it free to practice?
                             </span>
                             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -273,7 +296,8 @@
                         </button>
                         <div x-show="open" x-collapse x-cloak class="px-6 pb-4">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
-                                Kami menyediakan beberapa latihan gratis. Untuk fitur lengkap tersedia paket berlangganan terjangkau.
+                                <!-- Kami menyediakan beberapa latihan gratis. Untuk fitur lengkap tersedia paket berlangganan terjangkau. -->
+                                We offer some free exercises. For full features, affordable subscription plans are available.
                             </p>
                         </div>
                     </div>
@@ -287,10 +311,12 @@
             <div class="max-w-3xl mx-auto">
                 <div class="bg-indigo-800 rounded-xl p-8 md:p-12 text-center shadow-lg">
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-6">
-                        Besok ada wawancara kerja?
+                        <!-- Besok ada wawancara kerja? -->
+                        Is there a job interview tomorrow?
                     </h3>
                     <a href="../public/views/login.php" class="bg-teal-400 hover:bg-teal-500 text-indigo-900 font-semibold px-8 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-xl hover:-translate-y-0.5">
-                        Yuk Latihan Sekarang!
+                        <!-- Yuk Latihan Sekarang! -->
+                        Let's Practice Now!
                     </a>
                 </div>
             </div>
@@ -336,7 +362,10 @@
                     <div>
                         <h5 class="font-semibold text-gray-900 mb-4">Headquarters</h5>
                         <div class="space-y-3 text-sm text-gray-600">
-                            <p>Jalanin aja</p>
+                            <p>
+                                <!-- Jalanin aja -->
+                                Just do it
+                            </p>
                             <div class="flex items-center space-x-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -356,9 +385,17 @@
                     <div>
                         <h5 class="font-semibold text-gray-900 mb-4">Company</h5>
                         <ul class="space-y-2 text-sm text-gray-600">
-                            <li><a href="#" class="hover:text-teal-500 transition-colors">Syarat dan Ketentuan</a></li>
-                            <li><a href="#" class="hover:text-teal-500 transition-colors">Data Privasi</a></li>
-                            <li><a href="#" class="hover:text-teal-500 transition-colors">FAQ</a></li>
+                            <li><a href="#" class="hover:text-teal-500 transition-colors">
+                                <!-- Syarat dan Ketentuan -->
+                                Terms and Conditions
+                            </a></li>
+                            <li><a href="#" class="hover:text-teal-500 transition-colors">
+                                <!-- Data Privasi -->
+                                Privacy Data
+                            </a></li>
+                            <li><a href="#" class="hover:text-teal-500 transition-colors">
+                                FAQ
+                            </a></li>
                         </ul>
                     </div>
 

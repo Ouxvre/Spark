@@ -47,7 +47,10 @@
                 <!-- Menu + Tombol -->
                 <div class="flex items-center space-x-20">
                     <nav class="hidden md:flex items-center space-x-10">
-                        <a href="../public/index.php" class="hover:text-gray-300">Cara Kerja</a>
+                        <a href="../public/index.php" class="hover:text-gray-300">
+                            <!-- Cara Kerja -->
+                            Ways of Working
+                        </a>
                         <a href="../public/premium.php" class="hover:text-gray-300">Premium</a>
                     </nav>
                     <a href="../public/views/login.php"
@@ -70,7 +73,8 @@
         <!-- Hero Text -->
         <div class="max-w-7xl mx-auto px-6 py-20 text-center relative z-10 text-white">
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold">
-                Pilih paket yang paling tepat untukmu
+                <!-- Pilih paket yang paling tepat untukmu -->
+                Choose the package that's right for you
             </h1>
         </div>
 
@@ -83,26 +87,26 @@
                     <p class="text-2xl font-bold">Rp 0</p>
                     <hr class="my-4">
 
-                    <h3 class="text-sm font-semibold mb-3">Fitur:</h3>
+                    <h3 class="text-sm font-semibold mb-3">Feature:</h3>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Persiapan wawancara dengan AI
+                            <span class="text-green-500 mr-2">✔</span> Interview preparation with AI
                         </li>
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Quota wawancara 15 menit
+                            <span class="text-green-500 mr-2">✔</span> 15 minute interview quota
                         </li>
                         <li class="flex items-center">
                             <span class="text-red-500 mr-2">✖</span> Coaching session
                         </li>
                         <li class="flex items-center">
-                            <span class="text-red-500 mr-2">✖</span> Analisis hasil wawancara
+                            <span class="text-red-500 mr-2">✖</span> Analysis of interview results
                         </li>
                     </ul>
                 </div>
                 <div class="p-6">
                     <button
                         class="w-full border border-gray-300 rounded-full py-2 hover:bg-gray-100 transition">
-                        Mulai Latihan Wawancara
+                        Start Interview Practice
                     </button>
                 </div>
             </div>
@@ -115,16 +119,16 @@
                     <p class="text-2xl font-bold">Rp 15.000</p>
                     <hr class="my-4">
 
-                    <h3 class="text-sm font-semibold mb-3">Fitur:</h3>
+                    <h3 class="text-sm font-semibold mb-3">Feature</h3>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Analisis hasil wawancara
+                            <span class="text-green-500 mr-2">✔</span> Analysis of interview results
                         </li>
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Persiapan wawancara dengan AI
+                            <span class="text-green-500 mr-2">✔</span> Interview preparation with AI
                         </li>
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Quota wawancara 15 menit, bisa untuk 1x wawancara
+                            <span class="text-green-500 mr-2">✔</span> 15 minute interview quota, can be used for 1 interview
                         </li>
                         <li class="flex items-center">
                             <span class="text-red-500 mr-2">✖</span> Coaching session
@@ -134,7 +138,7 @@
                 <div class="p-6">
                     <button
                         class="w-full border border-gray-300 rounded-full py-2 hover:bg-gray-100 transition">
-                        Mulai Latihan Wawancara
+                        Start Interview Practice
                     </button>
                 </div>
             </div>
@@ -151,16 +155,16 @@
                     <p class="text-2xl font-bold">Rp 45.000</p>
                     <hr class="my-4">
 
-                    <h3 class="text-sm font-semibold mb-3">Fitur:</h3>
+                    <h3 class="text-sm font-semibold mb-3">Feature</h3>
                     <ul class="space-y-2 text-sm">
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Analisis hasil wawancara
+                            <span class="text-green-500 mr-2">✔</span> Analysis of interview results
                         </li>
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Persiapan wawancara dengan AI
+                            <span class="text-green-500 mr-2">✔</span> Interview preparation with AI
                         </li>
                         <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✔</span> Quota wawancara 60 menit, bisa untuk 1–4x wawancara
+                            <span class="text-green-500 mr-2">✔</span> Interview quota 60 minutes, can be used for 1–4 interviews
                         </li>
                         <li class="flex items-center">
                             <span class="text-red-500 mr-2">✖</span> Coaching session
@@ -170,7 +174,7 @@
                 <div class="p-6">
                     <button
                         class="w-full border border-gray-300 rounded-full py-2 hover:bg-gray-100 transition">
-                        Mulai Latihan Wawancara
+                        Start Interview Practice
                     </button>
                 </div>
             </div>
@@ -186,26 +190,26 @@
                 <p class="text-2xl font-bold text-green-600">Rp 200.000</p>
                 <hr class="my-4">
 
-                <h3 class="text-sm font-semibold mb-3">Fitur:</h3>
+                <h3 class="text-sm font-semibold mb-3">Feature</h3>
                 <ul class="space-y-2 text-sm">
                     <li class="flex items-center">
-                        <span class="text-green-500 mr-2">✔</span> Quota wawancara 120 menit, bisa untuk 1–8x wawancara
+                        <span class="text-green-500 mr-2">✔</span> Interview quota 120 minutes, can be used for 1–8 interviews
                     </li>
                     <li class="flex items-center">
-                        <span class="text-green-500 mr-2">✔</span> Coaching session Fresh Graduate 1 sesi (60 menit)
+                        <span class="text-green-500 mr-2">✔</span> Coaching session Fresh Graduate 1 session (60 minutes)
                     </li>
                     <li class="flex items-center">
-                        <span class="text-green-500 mr-2">✔</span> Analisis hasil wawancara
+                        <span class="text-green-500 mr-2">✔</span> Analysis of interview results
                     </li>
                     <li class="flex items-center">
-                        <span class="text-green-500 mr-2">✔</span> Persiapan wawancara dengan AI
+                        <span class="text-green-500 mr-2">✔</span> Interview preparation with AI
                     </li>
                 </ul>
             </div>
             <div class="p-6 md:w-60 flex items-center">
                 <button
                     class="w-full border border-gray-300 rounded-full py-2 hover:bg-gray-100 transition">
-                    Mulai Latihan Wawancara
+                    Start Interview Practice
                 </button>
             </div>
         </div>
@@ -219,14 +223,17 @@
                 <!-- Text -->
                 <div class="text-white space-y-5">
                     <h2 class="text-2xl md:text-3xl font-semibold">
-                        Daftar & coba gratis Spark. sekarang!
+                        <!-- Daftar & coba gratis Spark. sekarang! -->
+                        Sign up & try Spark for free now!
                     </h2>
                     <p class="text-xl font-medium">
-                        15.000++ <br>Telah merasakan manfaat Spark.
+                        15.000++ <br>
+                        <!-- Telah merasakan manfaat Spark. -->
+                        Have felt the benefits of Spark.
                     </p>
                     <a href="../public/views/login.php"
                         class="inline-block bg-[#68BBFF] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#57a5e6] transition">
-                        Coba Gratis
+                        Try it Free
                     </a>
                 </div>
 
@@ -255,18 +262,24 @@
 
         <!-- Teks & Tombol -->
         <div class="flex-1 text-white space-y-4">
-            <h3 class="text-lg font-semibold">Masih ragu?</h3>
+            <h3 class="text-lg font-semibold">
+                <!-- Masih ragu? -->
+                Still in doubt?
+            </h3>
             <p class="text-sm md:text-base">
-                Yuk, tanyakan langsung via WhatsApp atau lihat contoh hasil analisis kami untuk lebih jelasnya!
+                <!-- Yuk, tanyakan langsung via WhatsApp atau lihat contoh hasil analisis kami untuk lebih jelasnya! -->
+                Come on, ask directly via WhatsApp or see examples of our analysis results for more details!
             </p>
             <div class="flex gap-4">
                 <a href="#"
                    class="bg-white text-black px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition">
-                    Lihat Analisis Wawancara
+                    <!-- Lihat Analisis Wawancara -->
+                    View Interview Analysis
                 </a>
                 <a href="#"
                    class="bg-[#00A884] text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-[#00916f] transition">
-                    Hubungi Kami
+                    <!-- Hubungi Kami -->
+                    Contact us
                 </a>
             </div>
         </div>
@@ -290,7 +303,10 @@
                 <div>
                     <h5 class="font-semibold text-gray-900 mb-4">Headquarters</h5>
                     <div class="space-y-3 text-sm text-gray-600">
-                        <p>Jalanin aja</p>
+                        <p>
+                            <!-- Jalanin aja -->
+                            Just do it
+                        </p>
                         <div class="flex items-center space-x-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -310,8 +326,14 @@
                 <div>
                     <h5 class="font-semibold text-gray-900 mb-4">Company</h5>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-teal-500 transition-colors">Syarat dan Ketentuan</a></li>
-                        <li><a href="#" class="hover:text-teal-500 transition-colors">Data Privasi</a></li>
+                        <li><a href="#" class="hover:text-teal-500 transition-colors">
+                            <!-- Syarat dan Ketentuan -->
+                            Terms and Conditions
+                        </a></li>
+                        <li><a href="#" class="hover:text-teal-500 transition-colors">
+                            <!-- Data Privasi -->
+                            Privacy Data
+                        </a></li>
                         <li><a href="#" class="hover:text-teal-500 transition-colors">FAQ</a></li>
                     </ul>
                 </div>
