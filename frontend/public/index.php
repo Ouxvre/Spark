@@ -15,6 +15,9 @@
     <!-- alpine js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -35,54 +38,98 @@
         [x-cloak] {
             display: none !important;
         }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translate(1px, -2px) rotate(1deg);
+            }
+        }
+
+        .animate-shake {
+            animation: shake 2.9s infinite ease-in-out;
+        }
     </style>
 </head>
 
-<body>
+<body class="scroll-smooth">
     <div class="relative bg-[#34658D] h-[75xvh] overflow-hidden">
         <div class="absolute -left-20 -top-20 w-64 h-64 bg-[#68BBFF] rounded-full opacity-50"></div>
 
-        <!-- navbar -->
-        <header class="text-white">
+        <!-- Navbar -->
+        <header x-data="{ open: false }" class="text-white relative z-50">
             <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
                 <!-- Logo -->
-                <div class="text-4xl font-bold z-10">
+                <a href="../public/index.php" class="text-3xl font-bold z-10">
                     Spark<span class="text-[#68BBFF]">.</span>
-                </div>
+                </a>
 
-                <!-- Menu + Tombol -->
-                <div class="flex items-center space-x-20">
+                <div class="flex items-center justify-center space-x-7">
                     <!-- Menu Desktop -->
                     <nav class="hidden md:flex items-center space-x-10">
-                        <a href="#cara-kerja" class="hover:text-gray-300">
-                            <!-- Cara Kerja -->
-                            Ways of Working
-                        </a>
-                        <a href="../public/premium.php" class="hover:text-gray-300">Premium</a>
+                        <a href="#cara-kerja" class="hover:text-gray-300 transition">Ways of Working</a>
+                        <a href="premium.php" class="hover:text-gray-300 transition">Premium</a>
                     </nav>
 
-                    <!-- Tombol -->
+                    <!-- Tombol Desktop -->
                     <a href="../public/views/login.php"
-                        class="hidden text-shadow-none md:inline-block bg-white text-black px-7 py-2 rounded-full font-medium hover:bg-gray-200 text-[15px]">
+                        class="hidden md:inline-block bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-200 text-[15px]">
                         Get Started
                     </a>
                 </div>
 
-
-                <!-- Hamburger (Mobile) -->
-                <button class="md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                <!-- Tombol Hamburger (Mobile) -->
+                <button @click="open = !open"
+                    class="md:hidden focus:outline-none z-20 p-2 rounded-md bg-white/10 hover:bg-white/20 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" :class="{ 'hidden': open }" class="h-7 w-7" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" :class="{ 'hidden': !open }" class="h-7 w-7" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
                 </button>
             </div>
+
+            <!-- Menu Mobile -->
+            <nav x-show="open" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 -translate-y-4"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-4"
+                class="md:hidden absolute top-0 left-0 w-full bg-[#34658D] text-white flex flex-col items-center space-y-6 py-24 shadow-lg z-10">
+                <a href="#cara-kerja" @click="open = false" class="hover:text-gray-300 text-lg">Ways of Working</a>
+                <a href="premium.php" @click="open = false" class="hover:text-gray-300 text-lg">Premium</a>
+                <a href="views/login.php" @click="open = false"
+                    class="bg-white text-black px-8 py-2 rounded-full font-medium hover:bg-gray-200 text-lg transition">
+                    Get Started
+                </a>
+            </nav>
         </header>
 
+
         <!-- Hero Content -->
-        <div class="relative z-10 container mx-auto px-8 pt-20 pb-32 ">
+        <div class="relative z-10 container mx-auto px-8 pt-10 pb-32 ">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="text-white text-center lg:text-left space-y-6">
@@ -108,22 +155,29 @@
 
                 <!-- Right Content - Image -->
                 <div class="relative hidden lg:block">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=600&fit=crop"
-                        alt="Woman with laptop"
-                        class="w-full max-w-md mx-auto rounded-lg shadow-2xl transform hover:scale-105 transition duration-300">
+                    <img src="../src/assets/img/landing-page.png"
+                        alt="Ma'am Nevi"
+                        class="w-full max-w-md object-cover object-top h-[500px] mx-auto rounded-lg shadow-2xl transform hover:scale-105 transition duration-300">
+
+                    <!-- Floating Card -->
+                    <div class="absolute bottom-[470px] right-[370px] animate-shake max-w-[252px] min-w-[250px] h-4">
+                        <p class="text-white font-medium sm:text-3xl md:text-[18px] text-center drop-shadow-lg">
+                            SPARK Your English,<br> Shine in Your Future Career!
+                        </p>
+                    </div>
 
                     <!-- Floating Card -->
                     <div
                         class="absolute bottom-8 right-0 bg-white rounded-lg shadow-xl p-4 max-w-xs transform hover:scale-105 transition duration-300">
                         <div class="flex items-start gap-3">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop"
-                                alt="Linda"
+                            <img src="../src/assets/img/hero-mini.jpg"
+                                alt="Nevi Santy Agustean, M.Pd"
                                 class="w-12 h-12 rounded-full">
                             <div>
-                                <div class="font-semibold text-gray-800">Linda</div>
+                                <div class="font-semibold text-gray-800">Nevi Santy Agustean, M.Pd</div>
                                 <div class="text-sm text-gray-600 text-shadow-none">
                                     <!-- Background pendidikan saya akuntasi, saya ingin... -->
-                                    My educational background is accounting, I want to...
+                                    I'm a teacher at Vocational School
                                 </div>
                             </div>
                         </div>
@@ -155,7 +209,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center [text-shadow:1px_1px_2px_rgba(0,0,0,0.25)]">
 
             <!-- Langkah 1 -->
-            <div class="order-1">
+            <div class="order-1" data-aos="fade-right">
                 <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
                     <!-- Langkah 1 -->
                     Step 1
@@ -170,9 +224,9 @@
                 </p>
             </div>
 
-            <div class="order-2">
+            <div class="order-2" data-aos="fade-right">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl  hover:scale-105 transition-all">
                         <img src="../src/assets/img/langkah1.png" alt="contoh"
                             class="w-full h-auto object-contain">
                     </div>
@@ -181,15 +235,15 @@
 
 
             <!-- Langkah 2 -->
-            <div class="order-4 md:order-3">
+            <div class="order-4 md:order-3" data-aos="fade-left">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl  hover:scale-105 transition-all">
                         <img src="../src/assets/img/langkah2.png" alt="contoh" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
 
-            <div class="order-3 md:order-4">
+            <div class="order-3 md:order-4" data-aos="fade-left">
                 <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
                     <!-- Langkah 2 -->
                     Step 2
@@ -205,7 +259,7 @@
             </div>
 
             <!-- Langkah 3 -->
-            <div class="order-5">
+            <div class="order-5" data-aos="fade-right">
                 <p class="uppercase tracking-widest text-gray-500 text-xs sm:text-sm mb-2">
                     <!-- Langkah 3 -->
                     Step 3
@@ -220,9 +274,9 @@
                 </p>
             </div>
 
-            <div class="order-6">
+            <div class="order-6" data-aos="fade-right">
                 <div class="bg-gray-50 rounded-xl p-4 sm:p-8 flex justify-center">
-                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden w-full max-w-[575px] shadow-xl hover:scale-105 transition-all">
                         <img src="../src/assets/img/langkah3.png" alt="contoh" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -386,16 +440,16 @@
                         <h5 class="font-semibold text-gray-900 mb-4">Company</h5>
                         <ul class="space-y-2 text-sm text-gray-600">
                             <li><a href="#" class="hover:text-teal-500 transition-colors">
-                                <!-- Syarat dan Ketentuan -->
-                                Terms and Conditions
-                            </a></li>
+                                    <!-- Syarat dan Ketentuan -->
+                                    Terms and Conditions
+                                </a></li>
                             <li><a href="#" class="hover:text-teal-500 transition-colors">
-                                <!-- Data Privasi -->
-                                Privacy Data
-                            </a></li>
+                                    <!-- Data Privasi -->
+                                    Privacy Data
+                                </a></li>
                             <li><a href="#" class="hover:text-teal-500 transition-colors">
-                                FAQ
-                            </a></li>
+                                    FAQ
+                                </a></li>
                         </ul>
                     </div>
 
@@ -430,6 +484,10 @@
         </footer>
 
     </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

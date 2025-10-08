@@ -26,66 +26,103 @@
         font-family: "Poppins", sans-serif;
         font-weight: 400;
       }
+
+      /* Responsive font sizes */
+      h1 {
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+      }
+
+      h2 {
+        font-size: clamp(1.75rem, 5vw, 3.25rem);
+      }
+
+      @media (max-width: 768px) {
+        .card-container {
+          padding: 1.5rem;
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .content-container {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .illustration-container,
+        .form-container {
+          width: 100%;
+          max-width: 24rem;
+        }
+
+        .form-container {
+          padding: 0 1rem;
+        }
+
+        .email-input {
+          width: 100%;
+          max-width: 20rem;
+        }
+      }
     </style>
   </head>
 
   <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <!-- Card Container -->
     <div
-      class="bg-white w-full max-w-7xl rounded-3xl shadow-lg p-12 flex flex-col items-center relative"
+      class="card-container bg-white w-full max-w-7xl rounded-3xl shadow-lg p-6 sm:p-12 flex flex-col items-center relative"
     >
       <!-- Header -->
       <div
-        class="absolute top-6 left-8 flex justify-between items-center w-[calc(100%-4rem)]"
+        class="flex justify-between items-center w-full mb-6 sm:mb-8"
       >
-        <h1 class="text-4xl font-bold text-black">
+        <h1 class="text-2xl sm:text-3xl font-bold text-black">
           Spark<span class="text-blue-500">.</span>
         </h1>
         <a
           href="login.php"
-          class="bg-blue-400 text-white px-8 py-3 text-lg font-medium rounded-full hover:bg-blue-500 transition"
+          class="bg-blue-400 text-white px-4 sm:px-6 py-2 text-sm sm:text-base font-medium rounded-full hover:bg-blue-500 transition"
         >
           Login
         </a>
       </div>
 
       <!-- Content -->
-      <div class="flex flex-1">
+      <div class="content-container flex flex-col md:flex-row flex-1 w-full gap-6 sm:gap-10">
         <!-- Left Illustration -->
-        <div class="w-1/2 flex items-center justify-center">
+        <div class="illustration-container flex items-center justify-center w-full md:w-1/2">
           <img
             src="../../src/assets/img/forgot_password.png"
             alt="Forgot Password Illustration"
-            class="max-w-[420px]"
+            class="w-full max-w-xs sm:max-w-sm"
           />
         </div>
 
         <!-- Right Form -->
-        <div class="w-1/2 px-24 flex flex-col justify-center">
-          <h2 class="text-[52px] font-bold leading-tight mb-3">
+        <div class="form-container w-full md:w-1/2 flex flex-col justify-center px-4 sm:px-12">
+          <h2 class="font-bold leading-tight mb-3" style="font-family: 'Clearface', serif">
             Forgot <br />
             Password<span class="text-blue-400">?</span>
           </h2>
-          <p class="text-gray-600 text-lg mb-10 w-[360px]">
+          <p class="text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 w-full max-w-xs sm:max-w-md">
             Enter the email address associated <br />
             with your account.
           </p>
 
           <!-- Input Email -->
-          <div class="mb-8">
-            <label class="block text-gray-700 text-base font-medium mb-3">
+          <div class="mb-6 sm:mb-8">
+            <label class="block text-gray-700 text-sm sm:text-base font-medium mb-2 sm:mb-3">
               Enter Email Address
             </label>
             <input
               type="email"
               placeholder="example@email.com"
-              class="w-full border-b border-gray-400 focus:outline-none focus:border-blue-400 text-base py-2"
+              class="email-input w-full border-b border-gray-400 focus:outline-none focus:border-blue-400 text-sm sm:text-base py-2"
             />
           </div>
 
           <!-- Next Button -->
           <button
-            class="bg-blue-400 hover:bg-blue-500 text-white font-medium px-10 py-4 rounded-full w-40 text-lg"
+            class="bg-blue-400 hover:bg-blue-500 text-white font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-full w-full max-w-40 text-sm sm:text-base"
           >
             Next
           </button>
@@ -94,9 +131,9 @@
 
       <!-- Footer -->
       <div
-        class="w-full flex justify-between items-center px-3 py-1 text-sm text-gray-400 font-medium relative bottom-0"
+        class="w-full flex flex-col sm:flex-row justify-between items-center px-3 py-1 text-xs sm:text-sm text-gray-400 font-medium mt-6 sm:mt-8"
       >
-        <div class="flex gap-6">
+        <div class="flex gap-4 sm:gap-6 mb-4 sm:mb-0">
           <a href="#" class="hover:underline">Privacy Policy</a>
           <a href="#" class="hover:underline">Terms & Conditions</a>
         </div>
