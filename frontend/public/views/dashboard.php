@@ -19,7 +19,7 @@ include '../../../config/konfig.php';
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-<body class="bg-gray-50 font-[Poppins] flex">
+<body class="bg-[#E4E9F7] font-[Poppins] flex">
 
     <!-- Main Content -->
     <main class="flex-1 p-4 sm:p-6 md:p-8 lg:p-10 ml-0 md:ml-[240px]">

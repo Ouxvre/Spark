@@ -1,8 +1,10 @@
 <?php
 include(__DIR__ . '/../../../backend/include/check_login.php');
 ?>
+<?php include '../../src/components/sidebar.php'; ?>
 
-<html lang="id">
+<!DOCTYPE html>
+<html lang="id" class="h-full">
 
 <head>
     <meta charset="UTF-8">
@@ -12,63 +14,74 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        body {
+            overscroll-behavior: contain;
+        }
+
+        main {
+            height: 100vh;
+            overflow: hidden;
+            touch-action: none;
+        }
+    </style>
+
 </head>
 
-<body class="bg-gray-50">
-    <?php include '../../src/components/sidebar.php'; ?>
+<body class="bg-[#E4E9F7] h-dvh">
 
-    <main class="min-h-screen p-8 flex items-center justify-center ml-[240px]">
+    <main class="h-dvh overflow-hidden p-4 sm:p-6 md:p-8 flex items-center justify-center ml-0 md:ml-[240px]">
         <div class="w-full max-w-4xl">
-            <div class="bg-white rounded-lg shadow-sm p-8">
-                <h1 class="text-3xl font-bold mb-1">Interview Script Generator</h1>
-                <p class="text-gray-500 mb-3">Generate a formal interview script based on your information</p>
+            <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 md:p-8">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-1">Interview Script Generator</h1>
+                <p class="text-sm sm:text-base text-gray-500 mb-4 sm:mb-6">Generate a formal interview script based on your information</p>
 
                 <!-- Form Section -->
                 <div id="formSection">
-                    <div class="space-y-3">
+                    <div class="space-y-3 sm:space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Name</label>
                             <input
                                 type="text"
                                 id="name"
                                 placeholder="Enter your name"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                                class="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Educational Background</label>
+                            <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Educational Background</label>
                             <input
                                 type="text"
                                 id="education"
                                 placeholder="e.g., Bachelor's in Computer Science"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                                class="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Key Skill</label>
+                            <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Key Skill</label>
                             <input
                                 type="text"
                                 id="keySkill"
                                 placeholder="e.g., Full-stack development, Python, React"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                                class="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Experience</label>
+                            <label class="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">Experience</label>
                             <textarea
                                 id="experience"
                                 placeholder="Describe your relevant experience"
-                                rows="4"
-                                class="w-full px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+                                rows="3"
+                                class="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
                         </div>
 
                         <!-- Error Message -->
-                        <div id="errorMessage" class="hidden p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"></div>
+                        <div id="errorMessage" class="hidden p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-xs sm:text-sm"></div>
 
                         <button
                             onclick="generateScript()"
                             id="generateBtn"
-                            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors text-sm sm:text-base">
                             Generate Script
                         </button>
                     </div>
@@ -76,31 +89,31 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
 
                 <!-- Result Section -->
                 <div id="resultSection" class="hidden">
-                    <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-xl font-semibold">Generated Script</h2>
+                    <div class="flex items-center justify-between mb-3 sm:mb-4">
+                        <h2 class="text-lg sm:text-xl font-semibold">Generated Script</h2>
                         <button
                             onclick="resetForm()"
-                            class="text-red-500 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors"
+                            class="text-red-500 hover:text-red-600 p-1.5 sm:p-2 rounded-lg hover:bg-red-50 transition-colors"
                             title="Reset Form">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                             </svg>
                         </button>
                     </div>
 
-                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                        <div id="generatedScript" class="whitespace-pre-wrap text-gray-800 leading-relaxed"></div>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6 max-h-96 overflow-y-auto">
+                        <div id="generatedScript" class="whitespace-pre-wrap text-gray-800 leading-relaxed text-sm sm:text-base"></div>
                     </div>
 
-                    <div class="flex gap-4">
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <button
                             onclick="downloadScript()"
-                            class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                            class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors text-sm sm:text-base">
                             Download As TXT
                         </button>
                         <button
                             onclick="resetForm()"
-                            class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors">
+                            class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors text-sm sm:text-base">
                             Generate New Script
                         </button>
                     </div>
@@ -131,7 +144,7 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
             errorDiv.classList.add('hidden');
             generateBtn.disabled = true;
             generateBtn.innerHTML = `
-                <svg class="inline w-5 h-5 mr-2 animate-spin" fill="none" viewBox="0 0 24 24">
+                <svg class="inline w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
@@ -203,6 +216,19 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
             document.body.removeChild(element);
         }
     </script>
+
+    <script>
+        // Mencegah scroll horizontal & vertikal di HP, tapi masih izinkan pull-to-refresh
+        document.addEventListener('touchmove', function(e) {
+            // Cegah gerakan hanya kalau bukan dari atas halaman
+            if (window.scrollY > 0) {
+                e.preventDefault();
+            }
+        }, {
+            passive: false
+        });
+    </script>
+
 </body>
 
 </html>

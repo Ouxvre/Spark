@@ -140,7 +140,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </nav>
 
         <!-- User Profile -->
-        <div class="flex items-center justify-between p-4 sm:p-6 border-t border-gray-200">
+        <div class="flex items-center justify-between p-4 sm:p-6 border-t border-gray-200 flex-shrink-0 sticky bottom-0 bg-white">
             <div class="flex items-center space-x-2 sm:space-x-3 flex-1 min-w-0">
                 <img src="<?php echo htmlspecialchars($base_url . $avatar); ?>" alt="Foto Profil" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gray-200 object-cover flex-shrink-0">
                 <div class="min-w-0 flex-1">

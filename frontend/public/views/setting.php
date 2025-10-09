@@ -189,6 +189,69 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     </button>
                 </nav>
 
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const menuButtons = document.querySelectorAll(".menu-btn");
+
+                        menuButtons.forEach(btn => {
+                            if (!btn.classList.contains("active")) {
+                                btn.addEventListener("click", (e) => {
+                                    e.preventDefault();
+
+                                    // Cek apakah notifikasi sudah ada
+                                    let existing = document.getElementById("comingSoonAlert");
+                                    if (existing) existing.remove();
+
+                                    // Buat elemen notifikasi
+                                    const alert = document.createElement("div");
+                                    alert.id = "comingSoonAlert";
+                                    alert.textContent = "🚫 This feature is coming soon!";
+                                    alert.className = `
+                    fixed top-5 right-5 bg-red-500
+                    text-white font-semibold px-5 py-3 rounded-lg shadow-xl 
+                    text-sm md:text-base z-[9999] transform translate-x-[150%] opacity-0 
+                    transition-all duration-300 ease-out
+                `;
+                                    document.body.appendChild(alert);
+
+                                    // Animasi masuk (slide-in)
+                                    setTimeout(() => {
+                                        alert.style.transform = "translateX(0)";
+                                        alert.style.opacity = "1";
+                                    }, 10);
+
+                                    // Tambahkan efek "shake" agar langsung menarik perhatian
+                                    alert.animate([{
+                                            transform: 'translateX(0)'
+                                        },
+                                        {
+                                            transform: 'translateX(-5px)'
+                                        },
+                                        {
+                                            transform: 'translateX(5px)'
+                                        },
+                                        {
+                                            transform: 'translateX(0)'
+                                        }
+                                    ], {
+                                        duration: 400,
+                                        iterations: 2
+                                    });
+
+                                    // Hilangkan otomatis setelah 3 detik
+                                    setTimeout(() => {
+                                        alert.style.opacity = "0";
+                                        alert.style.transform = "translateX(150%)";
+                                        setTimeout(() => alert.remove(), 300);
+                                    }, 3000);
+                                });
+                            }
+                        });
+                    });
+                </script>
+
+
+
                 <!-- Right content -->
                 <section class="flex-1">
                     <form action="../../../backend/models/update_profil.php" enctype="multipart/form-data" method="POST" class="space-y-2">
@@ -338,13 +401,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 
                         <!-- Save Button -->
-                        <div class="flex justify-end gap-3">
+                        <!-- Floating Action Buttons -->
+                        <div class="fixed bottom-5 right-5 flex justify-end gap-3 z-50">
                             <button type="button"
-                                class="px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition">
+                                class="px-5 py-2.5 sm:px-6 sm:py-3 bg-gray-100 text-gray-700 rounded-xl font-medium 
+        hover:bg-gray-200 shadow-md hover:shadow-lg transition-all">
                                 Cancel
                             </button>
                             <button type="submit"
-                                class="btn-primary px-8 py-3 text-white rounded-xl font-medium shadow-lg">
+                                class="btn-primary px-7 py-2.5 sm:px-8 sm:py-3 text-white rounded-xl font-medium 
+        shadow-md hover:shadow-xl transition-all">
                                 Save Changes
                             </button>
                         </div>
