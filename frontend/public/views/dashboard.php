@@ -37,7 +37,7 @@ include '../../../config/konfig.php';
 
         <!-- Quick Actions -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 lg:mt-10">
-            <a href="interview.php" class="p-4 sm:p-5 bg-white rounded-xl text-center hover:bg-gray-100 transition group" target="_blank">
+            <a href="interview.php" class="p-4 sm:p-5 bg-white rounded-xl text-center hover:bg-gray-100 transition group">
                 <i data-feather="mic" class="w-6 h-6 sm:w-7 sm:h-7 mx-auto text-blue-600 mb-2 sm:mb-3 group-hover:scale-110 transition"></i>
                 <p class="text-sm sm:text-base font-semibold text-gray-800">Start Interview</p>
             </a>
