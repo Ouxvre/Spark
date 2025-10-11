@@ -64,8 +64,13 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
                             <label class="block text-sm font-medium text-gray-700 mb-2">AI*</label>
                             <div class="relative">
                                 <select id="aiSelect"
+<<<<<<< HEAD
                                     class="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-700 text-sm sm:text-base">
                                     <option value="">Select AI . . .</option>
+=======
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-500">
+                                    <option>select AI . . .</option>
+>>>>>>> 8e4bdeeb1bea3c46a05fab5bcf86c115b2ac876a
                                     <option value="man">AI Man</option>
                                     <option value="girl">AI Girl</option>
                                 </select>
