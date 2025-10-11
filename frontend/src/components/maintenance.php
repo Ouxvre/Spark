@@ -33,7 +33,7 @@
     <!-- Title -->
     <h1 class="text-4xl font-bold text-gray-900 mb-3">We’ll Be Back Soon</h1>
     <p class="text-gray-500 mb-8">
-      Sleeknote is down for scheduled maintenance and we expect to be back online in a few minutes.
+      Spark is down for scheduled maintenance and we expect to be back online in a few minutes.
     </p>
 
     <!-- Illustration -->
@@ -60,7 +60,7 @@
     <!-- Footer -->
     <p class="text-sm text-gray-500 max-w-sm">
       In the meantime, check out our blog to find inspiration on how to create high performing campaigns.
-      <a href="#" class="text-indigo-600 hover:underline ml-1">Go to blog →</a>
+      <a href="../../public/" class="text-indigo-600 hover:underline ml-1">Go to blog →</a>
     </p>
 
   </div>
