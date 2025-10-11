@@ -61,15 +61,13 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
 
                         <!-- Posisi Field -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Position*</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">AI*</label>
                             <div class="relative">
-                                <select
+                                <select id="aiSelect"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-500">
-                                    <option>Pilih Atau Ketik Posisi . . .</option>
-                                    <option>Junior</option>
-                                    <option>Mid-Level</option>
-                                    <option>Senior</option>
-                                    <option>Lead</option>
+                                    <option>select AI . . .</option>
+                                    <option value="man">AI Man</option>
+                                    <option value="girl">AI Girl</option>
                                 </select>
                                 <i
                                     class="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
@@ -78,13 +76,27 @@ include(__DIR__ . '/../../../backend/include/check_login.php');
 
                         <!-- Submit Button -->
                         <div class="flex justify-end pt-2">
-                            <a href="https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o"
+                            <a id="startButton" href="#"
                                 target="_blank"
                                 class="px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors shadow-sm inline-block text-center">
                                 begin the interview
                             </a>
                         </div>
 
+                        <script>
+                            const select = document.getElementById("aiSelect");
+                            const button = document.getElementById("startButton");
+
+                            select.addEventListener("change", () => {
+                                if (select.value === "man") {
+                                    button.href = "https://character.ai/chat/gdW376hhYU0wnDpCm0LQvSyQerb-pJ9mJhosfgcqyeQ";
+                                } else if (select.value === "girl") {
+                                    button.href = "https://character.ai/chat/WjJQ263B_9rZul5wZxBFUoJYXzPki94_qCNhDVh-_-o";
+                                } else {
+                                    button.href = "#";
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
